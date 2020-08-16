@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>367631172275-barhh3phaq488pdcl14hfg2n8sc0i2j4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.367631172275-barhh3phaq488pdcl14hfg2n8sc0i2j4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBJoz42Z1S_U19TdgTEWZyMEQtlP5kcdiA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>367631172275</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.lambtoncollege.GoodFood</string>
+	<key>PROJECT_ID</key>
+	<string>goodfood-373df</string>
+	<key>STORAGE_BUCKET</key>
+	<string>goodfood-373df.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:367631172275:ios:223dbbc3c4af3af1e9e6c6</string>
+	<key>DATABASE_URL</key>
+	<string>https://goodfood-373df.firebaseio.com</string>
+</dict>
+</plist>
