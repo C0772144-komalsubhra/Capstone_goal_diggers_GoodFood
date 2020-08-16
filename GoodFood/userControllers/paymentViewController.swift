@@ -87,6 +87,7 @@ class paymentViewController: UIViewController {
     
     @IBAction func btnCancel(_ sender: Any) {
         self.removeAnimate()
+        print("remove animate")
     }
     
 }
