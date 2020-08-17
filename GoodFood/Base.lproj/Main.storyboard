@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="htR-Ph-fRF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="htR-Ph-fRF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,10 +40,15 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uC3-HJ-hwx">
                                 <rect key="frame" x="250" y="542" width="51" height="31"/>
+                                <color key="onTintColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xU-pP-Oys">
-                                <rect key="frame" x="178" y="624" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <rect key="frame" x="163" y="621" width="73" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="LogIn">
+                                    <color key="titleColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i9f-vu-QfC"/>
                                 </connections>
@@ -55,20 +60,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="e5X-bU-ERk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="4Pd-FM-0EW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1xU-pP-Oys" secondAttribute="bottom" constant="208" id="4s0-Nr-U5c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1xU-pP-Oys" secondAttribute="bottom" constant="193" id="6eV-HE-1uJ"/>
+                            <constraint firstItem="1xU-pP-Oys" firstAttribute="top" secondItem="CSY-wh-joo" secondAttribute="bottom" constant="58" id="AGo-YV-fyH"/>
                             <constraint firstItem="uC3-HJ-hwx" firstAttribute="leading" secondItem="CSY-wh-joo" secondAttribute="trailing" constant="49" id="Alz-0I-GFV"/>
-                            <constraint firstItem="1xU-pP-Oys" firstAttribute="top" secondItem="CSY-wh-joo" secondAttribute="bottom" constant="61" id="DoW-FG-x5j"/>
                             <constraint firstItem="e5X-bU-ERk" firstAttribute="trailing" secondItem="iW6-bX-Gi7" secondAttribute="trailing" id="FkU-WO-Ash"/>
                             <constraint firstItem="iW6-bX-Gi7" firstAttribute="top" secondItem="e5X-bU-ERk" secondAttribute="bottom" constant="50" id="KBX-OC-xzw"/>
                             <constraint firstItem="XRM-vt-jGD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="Kh9-Aa-WPG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uC3-HJ-hwx" secondAttribute="bottom" constant="289" id="MQC-Bm-4LI"/>
                             <constraint firstItem="e5X-bU-ERk" firstAttribute="leading" secondItem="iW6-bX-Gi7" secondAttribute="leading" id="Npo-7x-dne"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1xU-pP-Oys" secondAttribute="trailing" constant="178" id="QW1-Mi-T64"/>
                             <constraint firstItem="CSY-wh-joo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="RF9-b9-eVV"/>
                             <constraint firstItem="CSY-wh-joo" firstAttribute="top" secondItem="uC3-HJ-hwx" secondAttribute="top" id="RVR-Yw-5Te"/>
                             <constraint firstItem="e5X-bU-ERk" firstAttribute="top" secondItem="XRM-vt-jGD" secondAttribute="bottom" constant="8" id="Z1g-YA-ox7"/>
                             <constraint firstItem="e5X-bU-ERk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cQJ-RM-3MS"/>
                             <constraint firstItem="CSY-wh-joo" firstAttribute="top" secondItem="iW6-bX-Gi7" secondAttribute="bottom" constant="58" id="eHX-i6-lsY"/>
-                            <constraint firstItem="XRM-vt-jGD" firstAttribute="centerX" secondItem="1xU-pP-Oys" secondAttribute="centerX" id="eQn-TA-3Vw"/>
+                            <constraint firstItem="1xU-pP-Oys" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="gmP-RU-km0"/>
                             <constraint firstItem="XRM-vt-jGD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="ley-Sj-FBU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XRM-vt-jGD" secondAttribute="trailing" constant="97" id="x5v-ro-RzJ"/>
                         </constraints>
@@ -76,6 +82,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="NHb-nR-FUM">
                         <barButtonItem key="rightBarButtonItem" title="Sign Up" id="8Vf-fo-c2A">
+                            <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="R0e-XP-MPf" kind="show" id="eEu-0r-cD8"/>
                             </connections>
@@ -356,10 +363,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="checkOutCartCell" id="10L-Vq-fio" customClass="checkOutCartCell" customModule="GoodFood" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="10L-Vq-fio" id="aok-NG-das">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjJ-LQ-CVm">
@@ -566,10 +573,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="comOrdersCell" id="vDd-94-Yyv">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vDd-94-Yyv" id="2gJ-JN-D6O">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -713,10 +720,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="restOrderCell" id="uW5-pS-Ya0" customClass="restOrderViewCell" customModule="GoodFood" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uW5-pS-Ya0" id="i8S-sQ-fAZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9YH-wY-XXa">
@@ -726,7 +733,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHh-Te-lSl">
-                                                    <rect key="frame" x="221" y="11" width="117" height="21.5"/>
+                                                    <rect key="frame" x="221" y="11" width="117" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="117" id="G4d-iT-Pb2"/>
                                                     </constraints>
@@ -1075,6 +1082,6 @@
     </scenes>
     <resources>
         <image name="Image" width="760" height="670"/>
-        <image name="location.circle" catalog="system" width="128" height="121"/>
+        <image name="location.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>
