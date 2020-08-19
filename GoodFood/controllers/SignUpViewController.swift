@@ -210,6 +210,7 @@ class SignUpViewController: UIViewController {
         
      let mapViewController = self.storyboard?.instantiateViewController(identifier: "mapVC") as? mapViewController
         mapViewController?.delegate = self
+         mapViewController?.fromVC = "notrc"
         self.navigationController?.pushViewController(mapViewController!, animated: true)
     
         

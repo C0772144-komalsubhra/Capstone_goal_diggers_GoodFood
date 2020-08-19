@@ -12,4 +12,6 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'BadgeSwift', '~> 8.0'
 
+pod 'Firebase'
+
 end

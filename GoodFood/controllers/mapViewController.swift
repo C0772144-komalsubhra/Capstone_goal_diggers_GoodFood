@@ -49,6 +49,7 @@ class mapViewController: UIViewController,MKMapViewDelegate, UISearchBarDelegate
              MapView.delegate = self
             showroute()
         }
+         MapView.delegate = self 
     }
     
     @objc func Tapped(tapges: UIGestureRecognizer ) {

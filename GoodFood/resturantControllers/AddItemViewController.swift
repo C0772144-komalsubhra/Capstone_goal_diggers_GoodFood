@@ -11,8 +11,10 @@ import FirebaseDatabase
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 
-class AddItemViewController: UIViewController {
+
+class AddItemViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var txtitemName: UITextField!
     @IBOutlet weak var txtCategory: UITextField!
@@ -26,34 +28,78 @@ class AddItemViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        imgitem.isUserInteractionEnabled = true
+        imgitem.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectimage)))
     }
     
+    @objc func selectimage(){
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
+        
+        
+    }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+
+
+            guard let image = info[.editedImage] as? UIImage else {
+                print("No image found")
+                return
+            }
+           
+        imgitem.image = image
+            // print out the image size as a test
+            print(image.size)
+        
+    }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("canceled")
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func btnAddItem(_ sender: Any) {
         
-        let db = FirebaseFirestore.Firestore.firestore()
+        let ref =  Storage.storage().reference().child("imagepng")
         
-        if let itemname = txtitemName.text, let category = txtCategory.text , let description = txtdescription.text, let cost = txtCost.text  {
-            
-            let  rn = resturantName!
-        
+         ref.putData(d, metadata: md) { (metadata, error) in
+             if error == nil {
+                 ref.downloadURL(completion: { (url, error) in
+                     print("Done, url is \(String(describing: url))")
+                 })
+             }else{
+                 print("error \(String(describing: error))")
+             }
+         }
 
-            db.collection("restaurants").document(rn.lowercased()).collection("menu").document(itemname.lowercased()).setData([
-                        "itemName":itemname,
-                        "category" : category,
-                        "description" : description,
-                        "cost" : cost
-                    ])
-          
-            
+         dismiss(animated: true)
         }
-        let message = "item Added"
-        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alertController, animated: true)
-        clearallfields()
+    
+       
+//        let db = FirebaseFirestore.Firestore.firestore()
+//
+//        if let itemname = txtitemName.text, let category = txtCategory.text , let description = txtdescription.text, let cost = txtCost.text  {
+//
+//            let  rn = resturantName!
+//
+//
+//            db.collection("restaurants").document(rn.lowercased()).collection("menu").document(itemname.lowercased()).setData([
+//                        "itemName":itemname,
+//                        "category" : category,
+//                        "description" : description,
+//                        "cost" : cost
+//                    ])
+//
+//
+//        }
+//        let message = "item Added"
+//        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+//        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//        self.present(alertController, animated: true)
+//        clearallfields()
         
     }
     
@@ -66,4 +112,4 @@ class AddItemViewController: UIViewController {
         
     }
     
-}
+
