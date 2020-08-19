@@ -11,6 +11,7 @@ import Firebase
 import FirebaseFirestore
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseStorage
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
@@ -99,32 +100,39 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
     
     @IBAction func SignUp(_ sender: Any) {
         
+     
+    }
+    
+  
+    private func additem(url: String){
+        
         let error = validateFields()
-                     
-                     if error == nil {
-               
-                     if let email = txtEmail.text, let password = txtPassword.text {
-                        createUser(email: email, password: password) {[weak self] (success) in
-                             guard let `self` = self else { return }
-                             var message: String = ""
-                             if (success) {
-                                 message = "User was sucessfully created."
+                          
+                          if error == nil {
+                    
+                          if let email = txtEmail.text, let password = txtPassword.text {
+                             createUser(email: email, password: password) {[weak self] (success) in
+                                  guard let `self` = self else { return }
+                                  var message: String = ""
+                                  if (success) {
+                                      message = "User was sucessfully created."
+                                 
+                                  } else {
+                                      message = "There was an error."
+                                  }
+                                  let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+                                  alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                                  self.present(alertController, animated: true)
+                              }
+                          }
+                          }else{
                             
-                             } else {
-                                 message = "There was an error."
-                             }
-                             let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-                             alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                             self.present(alertController, animated: true)
-                         }
-                     }
-                     }else{
-                       
-                       let alertController = UIAlertController(title: nil, message: error, preferredStyle: .alert)
-                           alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                           self.present(alertController, animated: true)
-                       
-               }
+                            let alertController = UIAlertController(title: nil, message: error, preferredStyle: .alert)
+                                alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                                self.present(alertController, animated: true)
+                            
+                    }
+        
     }
     
     
