@@ -57,6 +57,7 @@ class UserHomeViewController: UIViewController {
                 if let snapshotDocuments = querySnapshot?.documents{
                     for doc in snapshotDocuments{
                         let data = doc.data()
+                        print(data)
                         if let currentUser = Auth.auth().currentUser?.uid{
                             if let u = data["uuid"] as? String{
                                 if u == currentUser{
@@ -67,7 +68,7 @@ class UserHomeViewController: UIViewController {
                                         }
                                     }
                                     
-                                    self.imagesArray.append(data["url"]!)
+                                  
                                     
                                 }
                             }
@@ -89,8 +90,11 @@ class UserHomeViewController: UIViewController {
                 
                 
                 if let snapshotDocuments = querySnapshot?.documents{
+                    
+                     
                     for doc in snapshotDocuments{
-                        
+                         let data = doc.data()
+                        self.imagesArray.append(data["url"])
                         self.resarray.append(doc.documentID)
                        
                         
@@ -177,6 +181,19 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
         if self.menuSegment.selectedSegmentIndex == 0{
                        cell.label.text = resarray[indexPath.row]
                            cell.statusLabel.text = ""
+            let itemimageurl = self.imagesArray[indexPath.row]
+                   let url = URL(string: itemimageurl as! String)
+                      URLSession.shared.dataTask(with: url!) { (data, response, error) in
+                          if error != nil{
+                              print(error!)
+                              return
+                          }
+
+                          DispatchQueue.main.async(execute: {
+
+                              cell.img.image = UIImage(data: data!)
+                              })
+                      }.resume()
                       }else{
                           cell.label.text = bookedtables[indexPath.row]
                         cell.statusLabel.text = status[indexPath.row]
