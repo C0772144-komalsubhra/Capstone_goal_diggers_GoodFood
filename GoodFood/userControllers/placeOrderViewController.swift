@@ -131,6 +131,20 @@ extension placeOrderViewController:UICollectionViewDelegate,UICollectionViewData
      //   cell.label.text = "item"
        cell.label.text = self.itemArray[indexPath.row]
         print(self.imgitemArray[indexPath.row])
+        let itemimageurl = self.imgitemArray[indexPath.row]
+        let url = URL(string: itemimageurl as! String)
+           URLSession.shared.dataTask(with: url!) { (data, response, error) in
+               if error != nil{
+                   print(error!)
+                   return
+               }
+               
+               DispatchQueue.main.async(execute: {
+
+                   cell.imgitem.image = UIImage(data: data!)
+                   })
+           }.resume()
+           
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
