@@ -13,6 +13,9 @@ class itemNameCollectionViewCell:UICollectionViewCell{
     
     @IBOutlet weak var label: UILabel!
     
+    
+    @IBOutlet weak var imgitem: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
