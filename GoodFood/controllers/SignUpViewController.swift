@@ -100,6 +100,27 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
     
     @IBAction func SignUp(_ sender: Any) {
         
+
+        let ref = Storage.storage().reference().child(rn.lowercased()).child(category).child(itemname)
+                         
+            let uploaddata = self.userimage.image?.jpegData(compressionQuality: 0.5)
+                         
+                         let md = StorageMetadata()
+                         md.contentType = "image/png"
+                          ref.putData(uploaddata! , metadata: nil) { (metadata, error) in
+                              if error == nil {
+                                  ref.downloadURL(completion: { (url, error) in
+                             
+                                    let durl = String(describing: url!)
+                                    //  print("Done, url is \(String(describing: url))")
+                                    self.additem(url: durl)
+                                  })
+                              }else{
+                                  print("error \(String(describing: error))")
+                              }
+                          }
+        
+        
      
     }
     
@@ -111,7 +132,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
                           if error == nil {
                     
                           if let email = txtEmail.text, let password = txtPassword.text {
-                             createUser(email: email, password: password) {[weak self] (success) in
+                            createUser(email: email, password: password , url: url) {[weak self] (success) in
                                   guard let `self` = self else { return }
                                   var message: String = ""
                                   if (success) {
@@ -136,7 +157,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
     }
     
     
-      func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+    func createUser(email: String, password: String,url: String , completionBlock: @escaping (_ success: Bool) -> Void) {
               Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
                   if let user = authResult?.user {
                       print(user)
@@ -150,7 +171,9 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
                       let db = FirebaseFirestore.Firestore.firestore()
                         db.collection("restaurants").document(ResturantName.lowercased()).setData(["restaurantname":ResturantName,
                                                                 "address":address,
-                                                                "ruid": authResult!.user.uid
+                                                                "ruid": authResult!.user.uid,
+                                                                "url": url
+                            
                         ])
                         
                       self.clearfields()
@@ -160,7 +183,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
                                              let lastName = self.txtLastName.text!
                                             let address = self.txtAddress.text!
                                              let db = FirebaseFirestore.Firestore.firestore()
-                        db.collection("users").document(authResult!.user.uid).setData(["firstname":firstName, "lastname":lastName, "uuid": authResult!.user.uid,  "address":address ])
+                        db.collection("users").document(authResult!.user.uid).setData(["firstname":firstName, "lastname":lastName, "uuid": authResult!.user.uid,  "address":address , "url": url])
                                              self.clearfields()
                           
                           
