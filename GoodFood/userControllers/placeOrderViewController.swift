@@ -18,9 +18,9 @@ class placeOrderViewController: UIViewController {
     
     @IBOutlet weak var BtnBadge: BadgeSwift!
     var itemArray = [String]()
-    var imgitemArray = [String]()
-    var itemsdict = [String:Any]()
     var selectedRestaurant : String?
+    var imgitemArray = [Any]()
+      var itemsdict = [String:Any]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,15 +51,14 @@ class placeOrderViewController: UIViewController {
                if let snapshotDocuments = querySnapshot?.documents{
                 
                 print(snapshotDocuments.count)
-               
-                
                    for doc in snapshotDocuments{
                    
                     self.itemsdict = doc.data()
+                     
+                     self.itemArray.append(doc.documentID)
+                    self.imgitemArray.append(self.itemsdict["url"]!)
                     
-                    self.itemArray.append(doc.documentID)
-                    self.imgitemArray.append(contentsOf: self.itemsdict["url"] as! [String])
-                   
+              
                        
                    }
                    
@@ -129,23 +128,9 @@ extension placeOrderViewController:UICollectionViewDelegate,UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as! itemNameCollectionViewCell
-       
+     //   cell.label.text = "item"
        cell.label.text = self.itemArray[indexPath.row]
-        let itemimageurl = self.imgitemArray[indexPath.row]
-           let url = URL(string: itemimageurl)
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            if error != nil{
-                print(error!)
-                return
-            }
-            
-             DispatchQueue.main.async(execute: {
-
-                cell.imgitem.image = UIImage(data: data!)
-                })
-        }.resume()
-        
-      
+        print(self.imgitemArray[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
