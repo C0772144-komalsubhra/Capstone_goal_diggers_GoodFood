@@ -23,6 +23,7 @@ class UserHomeViewController: UIViewController {
     var noOfSeats = "empty"
     var date = "empty"
     var status = [String]()
+    var imagesArray = [Any]()
     
     
     override func viewDidLoad() {
@@ -65,6 +66,9 @@ class UserHomeViewController: UIViewController {
                                             
                                         }
                                     }
+                                    
+                                    self.imagesArray.append(data["url"]!)
+                                    
                                 }
                             }
                         }
