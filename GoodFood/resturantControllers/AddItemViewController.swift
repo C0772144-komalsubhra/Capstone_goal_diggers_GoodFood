@@ -14,6 +14,8 @@ import FirebaseFirestore
 import FirebaseStorage
 
 
+
+
 class AddItemViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var txtitemName: UITextField!
@@ -63,20 +65,21 @@ class AddItemViewController: UIViewController,UIImagePickerControllerDelegate, U
     
     @IBAction func btnAddItem(_ sender: Any) {
         
-        let ref =  Storage.storage().reference().child("imagepng")
+        let ref = Storage.storage().reference().child("imagepng")
         
-         ref.putData(d, metadata: md) { (metadata, error) in
-             if error == nil {
-                 ref.downloadURL(completion: { (url, error) in
-                     print("Done, url is \(String(describing: url))")
-                 })
-             }else{
-                 print("error \(String(describing: error))")
-             }
-         }
-
-         dismiss(animated: true)
-        }
+        
+//         ref.putData(d, metadata: md) { (metadata, error) in
+//             if error == nil {
+//                 ref.downloadURL(completion: { (url, error) in
+//                     print("Done, url is \(String(describing: url))")
+//                 })
+//             }else{
+//                 print("error \(String(describing: error))")
+//             }
+//         }
+//
+//         dismiss(animated: true)
+//        }
     
        
 //        let db = FirebaseFirestore.Firestore.firestore()
@@ -113,3 +116,4 @@ class AddItemViewController: UIViewController,UIImagePickerControllerDelegate, U
     }
     
 
+}

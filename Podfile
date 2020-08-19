@@ -11,7 +11,8 @@ pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'BadgeSwift', '~> 8.0'
-
+pod 'Firebase/Core'
 pod 'Firebase'
+pod 'Firebase/Storage'
 
 end
