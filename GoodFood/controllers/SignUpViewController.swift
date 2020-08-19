@@ -12,7 +12,7 @@ import FirebaseFirestore
 import FirebaseDatabase
 import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @IBOutlet weak var txtFirstName: UITextField!
     
@@ -29,17 +29,48 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var btnUser: UIButton!
     @IBOutlet weak var btnResturant: UIButton!
     
+    @IBOutlet weak var userimage: UIImageView!
+    
+    
     var clicked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        userimage.isUserInteractionEnabled = true
+               userimage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectimage)))
         hideFields()
         buttoncolors()
         
     }
     
+    @objc func selectimage(){
+           let picker = UIImagePickerController()
+           picker.allowsEditing = true
+           picker.delegate = self
+           present(picker, animated: true)
+           
+           
+       }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+          picker.dismiss(animated: true)
+
+
+              guard let image = info[.editedImage] as? UIImage else {
+                  print("No image found")
+                  return
+              }
+             
+          userimage.image = image
+              // print out the image size as a test
+              print(image.size)
+          
+      }
+      
+      func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+          print("canceled")
+          dismiss(animated: true, completion: nil)
+      }
     
     @IBAction func btnUser(_ sender: Any) {
         
