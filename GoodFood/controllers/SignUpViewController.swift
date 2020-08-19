@@ -101,7 +101,11 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
     @IBAction func SignUp(_ sender: Any) {
         
 
-        let ref = Storage.storage().reference().child(rn.lowercased()).child(category).child(itemname)
+        
+        let error = validateFields()
+                          
+                          if error == nil {
+        let ref = Storage.storage().reference().child("profileimages").child(txtFirstName.text!)
                          
             let uploaddata = self.userimage.image?.jpegData(compressionQuality: 0.5)
                          
@@ -120,7 +124,13 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
                               }
                           }
         
-        
+        }else{
+                                  
+                                  let alertController = UIAlertController(title: nil, message: error, preferredStyle: .alert)
+                                      alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                                      self.present(alertController, animated: true)
+                                  
+                          }
      
     }
     
