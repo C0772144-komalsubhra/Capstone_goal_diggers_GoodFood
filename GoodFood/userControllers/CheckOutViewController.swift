@@ -104,23 +104,25 @@ class CheckOutViewController: UIViewController {
         
         let db = FirebaseFirestore.Firestore.firestore()
         
-        
+        let orderid = NSUUID().uuidString
         
         db.collection("restaurants").document(selectedRestaurant!.lowercased()).collection("foodorders").document(self.currentUser).setData([
             "itemNames":self.cartItems,
             "quantites" : self.quantity,
             "total": String(self.total),
-            "orderid": self.currentUser
+            "userid": self.currentUser,
+           
            
         ])
         
-//        db.collection("users").document(self.currentUser).collection("orders").document(self.currentUser).setData([
-//                   "itemNames":self.cartItems,
-//                   "quantites" : self.quantity,
-//                   "total": String(self.total),
-//                   "orderid": self.currentUser
-//                  
-//               ])
+        db.collection("users").document(self.currentUser).collection("orders").document(orderid).setData([
+                   "itemNames":self.cartItems,
+                   "quantites" : self.quantity,
+                   "total": String(self.total),
+                
+                    "userid": self.currentUser,
+                  
+               ])
         
         let alertController = UIAlertController(title: nil, message: "Order Placed", preferredStyle: .alert)
                                     alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
