@@ -29,11 +29,35 @@ class CheckOutViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         populateTableView()
+         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "clear cart", style: .plain, target: self, action: #selector(addTapped))
    
         
     }
     
 
+    @objc func addTapped(){
+            
+       
+        for item in cartItems
+        {
+        let itemref = Firestore.firestore().collection("users").document(self.currentUser).collection("cart").document(item)
+
+                    itemref.delete() { err in
+                  if let err = err {
+                      print("Error removing document: \(err)")
+                  } else {
+                      print("Document successfully removed!")
+                  }
+                    }
+            
+        }
+                cartItems.removeAll()
+               costs.removeAll()
+               quantity.removeAll()
+        
+        self.cartTable.reloadData()
+        self.totalCost.text = ""
+      }
   func populateTableView(){
      
             
