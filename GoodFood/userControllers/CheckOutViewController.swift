@@ -114,6 +114,13 @@ class CheckOutViewController: UIViewController {
            
         ])
         
+//        db.collection("users").document(self.currentUser).collection("orders").document(self.currentUser).setData([
+//                   "itemNames":self.cartItems,
+//                   "quantites" : self.quantity,
+//                   "total": String(self.total),
+//                   "orderid": self.currentUser
+//                  
+//               ])
         
         let alertController = UIAlertController(title: nil, message: "Order Placed", preferredStyle: .alert)
                                     alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
