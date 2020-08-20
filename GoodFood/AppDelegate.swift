@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import FirebaseCore
+import Stripe
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+          Stripe.setDefaultPublishableKey("pk_test_51HHJ9TE7eKvBTCo729w5wQ9BbmBQu8sk2FUfkISb6xmZtT3UG11EF45TSpyIHGL4YC8GfNaustQgxa6zxXZKn0c400PQhljfyT")
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge,.sound]) { (granted, error ) in
                          if granted {
                              print("user gave permission for local")
