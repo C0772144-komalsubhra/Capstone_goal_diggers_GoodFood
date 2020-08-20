@@ -208,7 +208,8 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
                               })
                       }.resume()
                       }else{
-                        cell.img.image = nil
+            cell.img.image = UIImage(named: "tableimage")
+           //  cell.img.frame = CGRect(x: 0, y: 0, width: 50, height:50)
             
                           cell.label.text = bookedtables[indexPath.row]
                         cell.statusLabel.text = status[indexPath.row]
