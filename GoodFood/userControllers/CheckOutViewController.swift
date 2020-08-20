@@ -106,12 +106,12 @@ class CheckOutViewController: UIViewController {
         
         let orderid = NSUUID().uuidString
         
-        db.collection("restaurants").document(selectedRestaurant!.lowercased()).collection("foodorders").document(self.currentUser).setData([
+        db.collection("restaurants").document(selectedRestaurant!.lowercased()).collection("foodorders").document(orderid).setData([
             "itemNames":self.cartItems,
             "quantites" : self.quantity,
             "total": String(self.total),
             "userid": self.currentUser,
-           
+            "orderid": orderid
            
         ])
         
@@ -119,7 +119,7 @@ class CheckOutViewController: UIViewController {
                    "itemNames":self.cartItems,
                    "quantites" : self.quantity,
                    "total": String(self.total),
-                
+                   "orderid": self.currentUser,
                     "userid": self.currentUser,
                   
                ])
