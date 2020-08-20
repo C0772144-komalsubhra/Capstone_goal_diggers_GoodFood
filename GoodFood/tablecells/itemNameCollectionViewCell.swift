@@ -19,6 +19,7 @@ class itemNameCollectionViewCell:UICollectionViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imgitem.frame = CGRect(x: 0, y: 0, width: 50, height:50)
     }
     
     

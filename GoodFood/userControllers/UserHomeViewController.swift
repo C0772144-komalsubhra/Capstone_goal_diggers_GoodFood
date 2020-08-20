@@ -41,7 +41,9 @@ class UserHomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
     
-            tablesbooked()
+           tablesbooked()
+          
+
       }
 
     
@@ -94,6 +96,8 @@ class UserHomeViewController: UIViewController {
                      
                     for doc in snapshotDocuments{
                          let data = doc.data()
+                        self.imagesArray.removeAll()
+                        self.resarray.removeAll()
                         self.imagesArray.append(data["url"])
                         self.resarray.append(doc.documentID)
                        
@@ -105,9 +109,12 @@ class UserHomeViewController: UIViewController {
             }
             
 
-            self.tableView.reloadData()
+        self.tableView.reloadData()
         }
         
+  
+      
+
             
     }
     
@@ -119,21 +126,24 @@ class UserHomeViewController: UIViewController {
                                return
                            }
                            else{
-                               
-                               
+
+
                                if let snapshotDocuments = querySnapshot?.documents{
                                    for doc in snapshotDocuments{
-                                       
+
+                                     
                                     self.bookedtables.removeAll()
                                        self.bookedtables.append(doc.documentID)
                                        print(doc.get("seats")!)
+                                    self.noOfSeats.removeAll()
                                         self.noOfSeats = doc.get("seats") as! String
                                     self.status.removeAll()
                                        self.status.append(doc.get("status") as! String)
+                                    self.date.removeAll()
                                        self.date  = doc.get("date") as! String
-                                      
+
                                    }
-                                   
+
                                }
                            }
                         self.tableView.reloadData()
@@ -178,6 +188,7 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resturantsNameCell") as! restaurantsNameTableViewcell
        
+         cell.img.image = nil
         if self.menuSegment.selectedSegmentIndex == 0{
                        cell.label.text = resarray[indexPath.row]
                            cell.statusLabel.text = ""
@@ -192,9 +203,13 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
                           DispatchQueue.main.async(execute: {
 
                               cell.img.image = UIImage(data: data!)
+                            cell.img.frame = CGRect(x: 0, y: 0, width: 50, height:50)
+                            
                               })
                       }.resume()
                       }else{
+                        cell.img.image = nil
+            
                           cell.label.text = bookedtables[indexPath.row]
                         cell.statusLabel.text = status[indexPath.row]
                         if(status[indexPath.row] == "Not Confirmed"){
@@ -202,6 +217,7 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
                                 }else{
                                                     cell.statusLabel.textColor = UIColor.green
                                 }
+                     
                       }
         return cell
         
