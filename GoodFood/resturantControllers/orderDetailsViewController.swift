@@ -95,8 +95,8 @@ class orderDetailsViewController: UIViewController {
                                                  data = doc.data()
                  //                                   self.ordersArray.append(doc.documentID)
                  //                                   self.orderID = doc.documentID
-                                                  let number = String(Int.random(in: 0 ... 20))
-                                                    let db = Firestore.firestore().collection("restaurants").document(sr).collection("completedOrders").document(oi + number)
+                                             
+                                                    let db = Firestore.firestore().collection("restaurants").document(sr).collection("completedOrders").document(oi)
                                                     db.setData(data as! [String : Any])
                                                 }
                                                 
