@@ -11,9 +11,11 @@ import FirebaseDatabase
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import Stripe
 
-class CheckOutViewController: UIViewController {
+class CheckOutViewController: UIViewController, STPAddCardViewControllerDelegate {
     
+    @IBOutlet weak var detailstext: UITextView!
     @IBOutlet weak var totalCost: UILabel!
     @IBOutlet weak var cartTable: UITableView!
     
@@ -132,11 +134,35 @@ class CheckOutViewController: UIViewController {
         
     
     @IBAction func btnPopView(_ sender: Any) {
-        let popupVc = (self.storyboard?.instantiateViewController(identifier: "showPopUpId"))! as paymentViewController
-        self.addChild(popupVc)
-        popupVc.view.frame = self.view.frame
-        self.view.addSubview(popupVc.view)
-        popupVc.didMove(toParent: self)
+//        let popupVc = (self.storyboard?.instantiateViewController(identifier: "showPopUpId"))! as paymentViewController
+//        self.addChild(popupVc)
+//        popupVc.view.frame = self.view.frame
+//        self.view.addSubview(popupVc.view)
+//        popupVc.didMove(toParent: self)
+        
+        // Setup add card view controller
+        let addCardViewController = STPAddCardViewController()
+        addCardViewController.delegate = self
+        
+        // Present add card view controller
+        let navigationController = UINavigationController(rootViewController: addCardViewController)
+        present(navigationController, animated: true)
+    }
+    
+    func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
+        // Dismiss add card view controller
+        dismiss(animated: true)
+    }
+    
+    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreateToken token: STPToken, completion: @escaping STPErrorBlock) {
+        dismiss(animated: true)
+        
+        print("Printing Strip response:\(token.allResponseFields)\n\n")
+        print("Printing Strip Token:\(token.tokenId)")
+        
+        detailstext.text = "Transaction success! \n\nHere is the Token: \(token.tokenId)\nCard Type: \(token.card!.funding.rawValue)\n\nSend this token or detail to your backend server to complete this payment."
+        
+        
     }
     
 }
