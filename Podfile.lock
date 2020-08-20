@@ -345,6 +345,7 @@ PODS:
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
   - PromisesObjC (1.2.9)
+  - Stripe (19.4.0)
 
 DEPENDENCIES:
   - BadgeSwift (~> 8.0)
@@ -355,6 +356,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Firestore
   - Firebase/Storage
+  - Stripe
 
 SPEC REPOS:
   trunk:
@@ -379,6 +381,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - Stripe
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -402,7 +405,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
+  Stripe: 92f1c73a9dbd3c54277ed06a1fea6e08f20414c6
 
-PODFILE CHECKSUM: 959c8a2345a80629ac04158c418727c099f43623
+PODFILE CHECKSUM: e5d706339add4869fda5cbaa732edd11ffe5953f
 
 COCOAPODS: 1.9.3
