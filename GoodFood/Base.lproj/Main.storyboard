@@ -107,7 +107,6 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BGn-Vz-tFh">
                                 <rect key="frame" x="20" y="157" width="374" height="350"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OdE-d4-h1v">
                                     <size key="itemSize" width="230" height="250"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -195,7 +194,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BGn-Vz-tFh" firstAttribute="leading" secondItem="YC7-01-9oX" secondAttribute="leadingMargin" id="0bh-f9-Dg6"/>
                             <constraint firstItem="4Wo-Et-xUy" firstAttribute="top" secondItem="BGn-Vz-tFh" secondAttribute="bottom" constant="93" id="1z8-nS-bWb"/>
