@@ -655,7 +655,7 @@
                                                         <constraint firstAttribute="width" constant="173" id="FVW-cY-Rg1"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eam-nl-JUG">
@@ -679,6 +679,7 @@
                                                 <constraint firstItem="7UR-I8-xVi" firstAttribute="bottom" secondItem="Ord-Oh-VQu" secondAttribute="bottomMargin" id="tKs-sD-Yen"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="img" destination="7UR-I8-xVi" id="eqZ-qN-d1C"/>
                                             <outlet property="label" destination="jou-ZY-ApQ" id="529-rJ-itb"/>
