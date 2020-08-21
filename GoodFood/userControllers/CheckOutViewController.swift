@@ -155,7 +155,9 @@ class CheckOutViewController: UIViewController, STPAddCardViewControllerDelegate
     }
     
     func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreateToken token: STPToken, completion: @escaping STPErrorBlock) {
-        dismiss(animated: true)
+        
+        print(completion)
+        self.dismiss(animated: true)
         
         print("Printing Strip response:\(token.allResponseFields)\n\n")
         print("Printing Strip Token:\(token.tokenId)")

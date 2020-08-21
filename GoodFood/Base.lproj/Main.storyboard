@@ -46,7 +46,7 @@
                                 <rect key="frame" x="163" y="621" width="73" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="LogIn">
-                                    <color key="titleColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i9f-vu-QfC"/>
@@ -56,7 +56,7 @@
                                 <rect key="frame" x="77" y="143" width="240" height="215"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="e5X-bU-ERk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="4Pd-FM-0EW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1xU-pP-Oys" secondAttribute="bottom" constant="193" id="6eV-HE-1uJ"/>

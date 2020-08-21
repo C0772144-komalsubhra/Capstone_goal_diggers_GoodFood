@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-          Stripe.setDefaultPublishableKey("pk_live_51HHJ9TE7eKvBTCo78uS7YvUaKigMVVUYS80HNmavmJidnwC8B8nSxcrh8tmMqWcwR5b8aQyWbADaewtiMA6btZeg00wfwfwHqE")
+        Stripe.setDefaultPublishableKey("pk_test_51HHJ9TE7eKvBTCo729w5wQ9BbmBQu8sk2FUfkISb6xmZtT3UG11EF45TSpyIHGL4YC8GfNaustQgxa6zxXZKn0c400PQhljfyT")
+              
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge,.sound]) { (granted, error ) in
                          if granted {
                              print("user gave permission for local")
