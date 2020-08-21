@@ -582,7 +582,9 @@
                                 <rect key="frame" x="83" y="529" width="248" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Complete Order!"/>
+                                <state key="normal" title="Complete Order!">
+                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="btnCompleteOrder:" destination="njB-wr-QAc" eventType="touchUpInside" id="dFA-LK-0cf"/>
                                 </connections>
