@@ -107,6 +107,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BGn-Vz-tFh">
                                 <rect key="frame" x="20" y="157" width="374" height="350"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OdE-d4-h1v">
                                     <size key="itemSize" width="230" height="250"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -136,7 +137,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.080355487759999997" green="0.64564013480000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="sbl-Wk-FJq" firstAttribute="trailing" secondItem="fvy-hy-fNG" secondAttribute="trailing" id="Bnd-h1-3KZ"/>
                                             <constraint firstItem="sbl-Wk-FJq" firstAttribute="leading" secondItem="8u2-co-aLQ" secondAttribute="leading" constant="10" id="Ez5-oQ-GGK"/>
@@ -633,7 +634,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8hr-ec-htc">
                                 <rect key="frame" x="20" y="224" width="374" height="585"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resturantsNameCell" rowHeight="100" id="cvC-Fl-cY1" customClass="restaurantsNameTableViewcell" customModule="GoodFood" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="100"/>
