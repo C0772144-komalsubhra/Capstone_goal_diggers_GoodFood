@@ -331,7 +331,9 @@
                                 <rect key="frame" x="144" y="609" width="137" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <state key="normal" title="Book Table"/>
+                                <state key="normal" title="Book Table">
+                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="btnBookTable:" destination="hNe-in-Fpc" eventType="touchUpInside" id="pZb-yg-1mw"/>
                                 </connections>
