@@ -702,6 +702,7 @@
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qbl-UH-Zgq">
                                 <rect key="frame" x="38" y="176" width="337" height="32"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Resturants"/>
                                     <segment title="tables Booked"/>
@@ -711,7 +712,7 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="z1l-gG-Rzc" firstAttribute="leading" secondItem="qbl-UH-Zgq" secondAttribute="leading" id="8Mp-Yl-wGk"/>
                             <constraint firstItem="AMi-Tw-Ufj" firstAttribute="trailing" secondItem="z1l-gG-Rzc" secondAttribute="trailing" constant="67" id="L5F-od-FZt"/>
