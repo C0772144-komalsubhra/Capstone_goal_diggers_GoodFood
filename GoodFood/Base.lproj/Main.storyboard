@@ -46,7 +46,7 @@
                                     <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i9f-vu-QfC"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="XRM-vt-jGD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gf" translatesAutoresizingMaskIntoConstraints="NO" id="XRM-vt-jGD">
                                 <rect key="frame" x="77" y="143" width="240" height="215"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Remember Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSY-wh-joo">
@@ -1128,7 +1128,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="760" height="670"/>
+        <image name="gf" width="1066" height="1060"/>
         <image name="location.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
