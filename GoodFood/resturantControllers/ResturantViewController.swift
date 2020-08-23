@@ -263,6 +263,7 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
         }
         
         ac.addAction(submitAction)
+      
         
         present(ac, animated: true)
         
@@ -293,9 +294,11 @@ extension ResturantViewController : UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "restOrderCell") as! restOrderViewCell
         if self.ordersSegment.selectedSegmentIndex == 0{
               cell.label.text =  String(indexPath.row + 1)
+            cell.label.textColor = UIColor.systemYellow
              cell.statusLabel.text = ""
                  }else{
                     cell.label.text =  self.customersName[indexPath.row]
+                        cell.label.textColor = UIColor.systemYellow
                     cell.statusLabel.text = self.status[indexPath.row]
                             if(status[indexPath.row] == "Not Confirmed"){
                                        cell.statusLabel.textColor = UIColor.red
