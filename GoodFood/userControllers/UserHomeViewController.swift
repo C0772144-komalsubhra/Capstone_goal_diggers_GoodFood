@@ -32,8 +32,9 @@ class UserHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menu = SideMenuNavigationController(rootViewController: UIViewController())
+        menu = SideMenuNavigationController(rootViewController: MenuListController())
         menu?.leftSide = true
+        menu?.navigationBar.isHidden = true
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(presentmenu))
@@ -63,9 +64,26 @@ class UserHomeViewController: UIViewController {
     class MenuListController: UITableViewController{
         
         var items = ["first","second"]
+        let darkcolor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
         
+        
+           override func viewDidLoad() {
+               super.viewDidLoad()
+            tableView.backgroundColor = darkcolor
+            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cells")
+            
+           }
+          
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
             return items.count
+        }
+        
+         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cells", for: indexPath)
+            cell.textLabel?.text = items[indexPath.row]
+            cell.textLabel?.textColor = UIColor.systemYellow
+            cell.backgroundColor = darkcolor
+            return cell
         }
     }
     
