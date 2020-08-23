@@ -14,5 +14,6 @@ pod 'BadgeSwift', '~> 8.0'
 pod 'Firebase/Core'
 pod 'Firebase/Storage'
 pod 'Stripe'
+pod 'SideMenu'
 
 end

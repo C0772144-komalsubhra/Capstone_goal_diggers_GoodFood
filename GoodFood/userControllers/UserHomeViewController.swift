@@ -11,6 +11,8 @@ import FirebaseDatabase
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import SideMenu
+
 
 class UserHomeViewController: UIViewController {
     
@@ -24,12 +26,17 @@ class UserHomeViewController: UIViewController {
     var date = "empty"
     var status = [String]()
     var imagesArray = [Any]()
-    
+    var menu: SideMenuNavigationController?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        menu = SideMenuNavigationController(rootViewController: UIViewController())
+        menu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(presentmenu))
         
         greetUser()
     
@@ -40,12 +47,28 @@ class UserHomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        //navigationController?.setNavigationBarHidden(true, animated: animated)
            tablesbooked()
           
 
       }
 
+    
+    @objc func presentmenu(){
+        
+        present(menu!,animated: true)
+        
+    }
+    
+    class MenuListController: UITableViewController{
+        
+        var items = ["first","second"]
+        
+        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+            return items.count
+        }
+    }
+    
     
     func greetUser(){
         
