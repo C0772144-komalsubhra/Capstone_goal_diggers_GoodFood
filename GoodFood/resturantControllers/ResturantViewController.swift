@@ -39,11 +39,17 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
 //        navigationController?.navigationBar.isHidden = true
         UNUserNotificationCenter.current().delegate = self
         
-         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
         
         
         
         
+    }
+    
+    @objc func logout(){
+          do { try Auth.auth().signOut() }
+        catch { print("already logged out") }
+        navigationController?.popToRootViewController(animated: true)
     }
     
     
