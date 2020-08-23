@@ -39,22 +39,30 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
 //        navigationController?.navigationBar.isHidden = true
         UNUserNotificationCenter.current().delegate = self
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
+       // navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
         
         
         
         
     }
     
-    @objc func logout(){
-          do { try Auth.auth().signOut() }
-        catch { print("already logged out") }
-        navigationController?.popToRootViewController(animated: true)
+   
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+//    @objc func logout(){
+//          do { try Auth.auth().signOut() }
+//        catch { print("already logged out") }
+//        navigationController?.popToRootViewController(animated: true)
+//    }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+           navigationController?.setNavigationBarHidden(true, animated: animated)
         populatecollectionView()
         ordersTable.reloadData() 
     }
@@ -284,6 +292,12 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
             completionHandler(.alert)
         }
     
+    
+    @IBAction func btnlogout(_ sender: Any) {
+         do { try Auth.auth().signOut() }
+                catch { print("already logged out") }
+                navigationController?.popToRootViewController(animated: true)
+    }
     
 }
 extension ResturantViewController : UITableViewDelegate, UITableViewDataSource
