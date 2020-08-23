@@ -153,15 +153,15 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
                                      
                                      
                                      if let snapshotDocuments = querySnapshot?.documents{
-                                         
-                                         for doc in snapshotDocuments{
                                             self.bookedTablesArray.removeAll()
+                                           self.bookedTablesSeats.removeAll()
+                                         self.customersName.removeAll()
+                                          self.status.removeAll()
+                                         for doc in snapshotDocuments{
+                                         
                                             self.bookedTablesArray.append(doc.documentID)
-                                            self.bookedTablesSeats.removeAll()
                                             self.bookedTablesSeats.append(doc.get("seats") as! String)
-                                            self.customersName.removeAll()
                                             self.customersName.append(doc.get("name") as! String)
-                                            self.status.removeAll()
                                             self.status.append(doc.get("status") as! String)
                                             self.tableDate = doc.get("date") as! String
                                              
