@@ -36,10 +36,10 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.isHidden = true
         UNUserNotificationCenter.current().delegate = self
         
-        
+         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: nil)
         
         
         

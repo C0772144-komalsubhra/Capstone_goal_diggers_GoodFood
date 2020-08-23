@@ -32,6 +32,8 @@ class AddItemViewController: UIViewController,UIImagePickerControllerDelegate, U
         // Do any additional setup after loading the view.
         imgitem.isUserInteractionEnabled = true
         imgitem.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectimage)))
+     
+    
     }
     
     @objc func selectimage(){
@@ -143,5 +145,6 @@ class AddItemViewController: UIViewController,UIImagePickerControllerDelegate, U
         
     }
     
-
+ 
+    
 }
