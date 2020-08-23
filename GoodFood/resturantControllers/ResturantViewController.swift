@@ -263,7 +263,8 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
         }
         
         ac.addAction(submitAction)
-      
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+        ac.addAction(cancelAction)
         
         present(ac, animated: true)
         
