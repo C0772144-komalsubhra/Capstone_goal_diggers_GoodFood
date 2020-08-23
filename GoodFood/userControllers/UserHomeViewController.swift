@@ -40,7 +40,7 @@ class UserHomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
-    
+        navigationController?.setNavigationBarHidden(true, animated: animated)
            tablesbooked()
           
 
@@ -164,6 +164,13 @@ class UserHomeViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func btnLogout(_ sender: Any) {
+        
+        do { try Auth.auth().signOut() }
+                     catch { print("already logged out") }
+                     navigationController?.popToRootViewController(animated: true)
+        
+    }
     
 }
 

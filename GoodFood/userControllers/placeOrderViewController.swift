@@ -34,6 +34,11 @@ class placeOrderViewController: UIViewController {
           super.viewWillAppear(animated)
              setbadgecount()
       }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
 
  func populatecollectionView(){
     
@@ -115,6 +120,11 @@ class placeOrderViewController: UIViewController {
                   }
         
     
+    @IBAction func btnLogout(_ sender: Any) {
+        
+        
+        
+    }
     
     
 }
