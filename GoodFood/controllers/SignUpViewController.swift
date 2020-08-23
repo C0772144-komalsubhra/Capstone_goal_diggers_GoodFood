@@ -101,12 +101,14 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
     @IBAction func SignUp(_ sender: Any) {
         
 
-        
+       var  ref = Storage.storage().reference().child("profileimages").child(self.txtFirstName.text!)
         let error = validateFields()
                           
                           if error == nil {
-        let ref = Storage.storage().reference().child("profileimages").child(txtFirstName.text!)
-                         
+                            if(clicked == false){
+                              ref = Storage.storage().reference().child("profileimages").child(self.txtResturantName.text!)
+                                
+                            }
             let uploaddata = self.userimage.image?.jpegData(compressionQuality: 0.5)
                          
                          let md = StorageMetadata()

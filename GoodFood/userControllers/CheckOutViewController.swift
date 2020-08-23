@@ -13,7 +13,9 @@ import Firebase
 import FirebaseFirestore
 import Stripe
 
-class CheckOutViewController: UIViewController, STPAddCardViewControllerDelegate {
+class CheckOutViewController: UIViewController, STPAddCardViewControllerDelegate{
+    
+    
     
     @IBOutlet weak var detailstext: UITextView!
     @IBOutlet weak var totalCost: UILabel!
@@ -153,19 +155,32 @@ class CheckOutViewController: UIViewController, STPAddCardViewControllerDelegate
         // Dismiss add card view controller
         dismiss(animated: true)
     }
-    
-    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreateToken token: STPToken, completion: @escaping STPErrorBlock) {
-        
-        print(completion)
-        self.dismiss(animated: true)
-        
-        print("Printing Strip response:\(token.allResponseFields)\n\n")
-        print("Printing Strip Token:\(token.tokenId)")
-        
-        detailstext.text = "Transaction success! \n\nHere is the Token: \(token.tokenId)\nCard Type: \(token.card!.funding.rawValue)\n\nSend this token or detail to your backend server to complete this payment."
-        
-        
+    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreatePaymentMethod paymentMethod: STPPaymentMethod, completion: @escaping STPErrorBlock) {
+         self.dismiss(animated: true)
+
+        print("Printing Strip response:\( paymentMethod.alipay)\n\n")
+
+
+               detailstext.text = "Printing Strip response:\(paymentMethod.allResponseFields)\n\n"
+
+
     }
+    
+  
+    
+    
+//    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreateToken token: STPToken, completion: @escaping STPErrorBlock) {
+//
+//        print(completion)
+//        self.dismiss(animated: true)
+//
+//        print("Printing Strip response:\(token.allResponseFields)\n\n")
+//        print("Printing Strip Token:\(token.tokenId)")
+//
+//        detailstext.text = "Transaction success! \n\nHere is the Token: \(token.tokenId)\nCard Type: \(token.card!.funding.rawValue)\n\nSend this token or detail to your backend server to complete this payment."
+//
+//
+//    }
     
 }
 

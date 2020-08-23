@@ -96,12 +96,12 @@ class UserHomeViewController: UIViewController {
                      
                     for doc in snapshotDocuments{
                          let data = doc.data()
-                        self.imagesArray.removeAll()
-                        self.resarray.removeAll()
+                 
+                      
                         self.imagesArray.append(data["url"])
                         self.resarray.append(doc.documentID)
                        
-                        
+                        print(self.imagesArray)
                         
                     }
                     
@@ -179,6 +179,7 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
      
         
         if self.menuSegment.selectedSegmentIndex == 0{
+     
                  return resarray.count
                }else{
             return bookedtables.count
@@ -204,7 +205,7 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
 
                               cell.img.image = UIImage(data: data!)
                             cell.img.frame = CGRect(x: 0, y: 0, width: 50, height:50)
-                            
+
                               })
                       }.resume()
                       }else{
