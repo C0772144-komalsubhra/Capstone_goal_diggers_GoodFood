@@ -745,6 +745,18 @@
                                     <action selector="btnLogout:" destination="ywZ-E3-EiU" eventType="touchUpInside" id="ngr-yo-GPq"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-Jn-0i4">
+                                <rect key="frame" x="0.0" y="70" width="264" height="765"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L1z-4i-ncG">
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="765"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -764,6 +776,8 @@
                     <connections>
                         <outlet property="lblWelcome" destination="z1l-gG-Rzc" id="vah-Ij-Ryf"/>
                         <outlet property="menuSegment" destination="qbl-UH-Zgq" id="fKb-7N-JAH"/>
+                        <outlet property="sidetableview" destination="L1z-4i-ncG" id="ToJ-lf-y4J"/>
+                        <outlet property="sideview" destination="ea7-Jn-0i4" id="MT1-HL-Qz5"/>
                         <outlet property="tableView" destination="8hr-ec-htc" id="ppo-tn-OFF"/>
                     </connections>
                 </viewController>
@@ -792,7 +806,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9YH-wY-XXa">
-                                                    <rect key="frame" x="31" y="0.0" width="182" height="21"/>
+                                                    <rect key="frame" x="31" y="0.0" width="182" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="182" id="Uww-1v-uWE"/>
                                                     </constraints>
@@ -801,7 +815,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHh-Te-lSl">
-                                                    <rect key="frame" x="221" y="11" width="117" height="21"/>
+                                                    <rect key="frame" x="221" y="11" width="117" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="117" id="0QL-LK-NtA"/>
                                                     </constraints>

@@ -11,7 +11,8 @@ import FirebaseDatabase
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
-import SideMenu
+//import SideMenu
+
 
 
 class UserHomeViewController: UIViewController {
@@ -21,22 +22,30 @@ class UserHomeViewController: UIViewController {
     @IBOutlet weak var menuSegment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     var resarray = [String]()
+    @IBOutlet weak var sideview: UIView!
+    @IBOutlet weak var sidetableview: UITableView!
     var bookedtables = [String]()
     var noOfSeats = "empty"
     var date = "empty"
     var status = [String]()
     var imagesArray = [Any]()
-    var menu: SideMenuNavigationController?
+      var isSideViewOpen : Bool = false
+   // var menu: SideMenuNavigationController?
+ 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//
+//        menu = SideMenuNavigationController(rootViewController: UserHomeViewController())
+//        menu?.leftSide = true
+//        menu?.navigationBar.isHidden = true
+//        SideMenuManager.default.leftMenuNavigationController = menu
+//        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         
-        menu = SideMenuNavigationController(rootViewController: MenuListController())
-        menu?.leftSide = true
-        menu?.navigationBar.isHidden = true
-        SideMenuManager.default.leftMenuNavigationController = menu
-        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        sideview.isHidden = true
+           isSideViewOpen = false
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(presentmenu))
         
         greetUser()
@@ -48,7 +57,7 @@ class UserHomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
-        //navigationController?.setNavigationBarHidden(true, animated: animated)
+      // navigationController?.setNavigationBarHidden(true, animated: animated)
            tablesbooked()
           
 
@@ -56,37 +65,82 @@ class UserHomeViewController: UIViewController {
 
     
     @objc func presentmenu(){
-        
-        present(menu!,animated: true)
+        sidetableview.isHidden = false
+               sideview.isHidden = false
+               self.view.bringSubviewToFront(sideview)
+               if !isSideViewOpen {
+                   isSideViewOpen = true
+                   sideview.frame = CGRect(x: 0, y: 96, width: 3, height: 717)
+                   sidetableview.frame = CGRect(x: 0, y: 0, width: 0, height: 717)
+                   UIView.setAnimationDuration(0.5)
+                   UIView.setAnimationDelegate(self)
+                   UIView.beginAnimations("TableAnimation", context: nil)
+                   
+                   sideview.frame = CGRect(x: 0, y: 96, width: 240, height: 717)
+                   sidetableview.frame = CGRect(x: 0, y: 0, width: 240, height: 717)
+                   UIView.commitAnimations()
+               }
+                   
+               else {
+                   sidetableview.isHidden = true
+                   sideview.isHidden = true
+                   isSideViewOpen = false
+                   sideview.frame = CGRect(x: 0, y: 96, width: 240, height: 717)
+                   sidetableview.frame = CGRect(x: 0, y: 0, width: 240, height: 717)
+                   UIView.setAnimationDuration(0.3)
+                   UIView.setAnimationDelegate(self)
+                   UIView.beginAnimations("TableAnimation", context: nil)
+                   sideview.frame = CGRect(x: 0, y: 96, width: 3, height: 717)
+                   sidetableview.frame = CGRect(x: 0, y: 0, width: 0, height: 717)
+                   UIView.commitAnimations()
+               }
+       // present(menu!,animated: true)
         
     }
     
-    class MenuListController: UITableViewController{
-        
-        var items = ["first","second"]
-        let darkcolor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
-        
-        
-           override func viewDidLoad() {
-               super.viewDidLoad()
-            tableView.backgroundColor = darkcolor
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cells")
-            
-           }
-          
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-            return items.count
-        }
-        
-         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cells", for: indexPath)
-            cell.textLabel?.text = items[indexPath.row]
-            cell.textLabel?.textColor = UIColor.systemYellow
-            cell.backgroundColor = darkcolor
-            return cell
-        }
-    }
-    
+//    class MenuListController: UITableViewController{
+//
+//
+//
+//
+//        var items = ["first","Logout"]
+//        let darkcolor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
+//
+//
+//
+//           override func viewDidLoad() {
+//               super.viewDidLoad()
+//            tableView.backgroundColor = darkcolor
+//            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cells")
+//
+//           }
+//
+//        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+//            return items.count
+//        }
+//
+//         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "cells", for: indexPath)
+//            cell.textLabel?.text = items[indexPath.row]
+//            cell.textLabel?.textColor = UIColor.systemYellow
+//            cell.backgroundColor = darkcolor
+//            return cell
+//        }
+//          override  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//
+//            if(indexPath.row == 1){
+//
+//
+//
+//            }
+//
+//        }
+//
+//
+//    }
+   
+   
     
     func greetUser(){
         
@@ -276,6 +330,7 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
         if self.menuSegment.selectedSegmentIndex == 0{
                               
          if let placeOrderViewController = self.storyboard?.instantiateViewController(identifier: "placeOrderVC") as? placeOrderViewController{
+
             placeOrderViewController.selectedRestaurant = resarray[indexPath.row]
                          self.navigationController?.pushViewController(placeOrderViewController, animated: true)
                      }
