@@ -30,6 +30,7 @@ class UserHomeViewController: UIViewController {
     var status = [String]()
     var imagesArray = [Any]()
       var isSideViewOpen : Bool = false
+      var arrData = ["hello","logout"]
    // var menu: SideMenuNavigationController?
  
 
@@ -51,6 +52,9 @@ class UserHomeViewController: UIViewController {
         greetUser()
     
         populateTableView()
+        sidetableview.delegate = self
+        sidetableview.dataSource = self
+        sidetableview.reloadData()
      
     }
    
@@ -278,7 +282,9 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     
+       if tableView == sidetableview{
+        return arrData.count
+       }else{
         
         if self.menuSegment.selectedSegmentIndex == 0{
      
@@ -286,9 +292,16 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
                }else{
             return bookedtables.count
                }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == sidetableview{
+       
+              let cell = tableView.dequeueReusableCell(withIdentifier: "sidecell") as? UITableViewCell
+            cell?.textLabel?.text = self.arrData[indexPath.row]
+            return cell!
+        }else{
         let cell = tableView.dequeueReusableCell(withIdentifier: "resturantsNameCell") as! restaurantsNameTableViewcell
        
          cell.img.image = nil
@@ -323,10 +336,19 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
                                 }
                      
                       }
-        return cell
+             return cell
+        }
+       
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            if tableView == sidetableview{
+                if(arrData[indexPath.row] == "logout"){
+                    do { try Auth.auth().signOut() }
+                                     catch { print("already logged out") }
+                                     navigationController?.popToRootViewController(animated: true)
+                }
+            }else{
         if self.menuSegment.selectedSegmentIndex == 0{
                               
          if let placeOrderViewController = self.storyboard?.instantiateViewController(identifier: "placeOrderVC") as? placeOrderViewController{
@@ -341,6 +363,6 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
                                                self.present(alertController, animated: true)
         }
     }
-    
+    }
     
 }
