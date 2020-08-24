@@ -11,9 +11,9 @@ import FirebaseDatabase
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
-import Stripe
 
-class CheckOutViewController: UIViewController, STPAddCardViewControllerDelegate{
+
+class CheckOutViewController: UIViewController{
     
     
     
@@ -136,34 +136,13 @@ class CheckOutViewController: UIViewController, STPAddCardViewControllerDelegate
         
     
     @IBAction func btnPopView(_ sender: Any) {
-//        let popupVc = (self.storyboard?.instantiateViewController(identifier: "showPopUpId"))! as paymentViewController
-//        self.addChild(popupVc)
-//        popupVc.view.frame = self.view.frame
-//        self.view.addSubview(popupVc.view)
-//        popupVc.didMove(toParent: self)
+        let popupVc = (self.storyboard?.instantiateViewController(identifier: "showPopUpId"))! as paymentViewController
+        self.addChild(popupVc)
+        popupVc.view.frame = self.view.frame
+        self.view.addSubview(popupVc.view)
+        popupVc.didMove(toParent: self)
         
-        // Setup add card view controller
-        let addCardViewController = STPAddCardViewController()
-        addCardViewController.delegate = self
-        
-        // Present add card view controller
-        let navigationController = UINavigationController(rootViewController: addCardViewController)
-        present(navigationController, animated: true)
-    }
-    
-    func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
-        // Dismiss add card view controller
-        dismiss(animated: true)
-    }
-    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreatePaymentMethod paymentMethod: STPPaymentMethod, completion: @escaping STPErrorBlock) {
-         self.dismiss(animated: true)
-
-        print("Printing Strip response:\( paymentMethod.alipay)\n\n")
-
-
-               detailstext.text = "Printing Strip response:\(paymentMethod.allResponseFields)\n\n"
-
-
+      
     }
     
   

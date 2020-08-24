@@ -11,8 +11,29 @@ import FirebaseDatabase
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import Stripe
 
-class paymentViewController: UIViewController {
+class paymentViewController: UIViewController, STPAddCardViewControllerDelegate {
+    
+    @IBOutlet weak var paybtnoutlet: UIButton!
+    
+    func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
+         dismiss(animated: true)
+    }
+    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreatePaymentMethod paymentMethod: STPPaymentMethod, completion: @escaping STPErrorBlock) {
+                    self.dismiss(animated: true)
+
+                  // print("Printing Strip response:\( paymentMethod.alipay)\n\n")
+
+
+                       //   detailstext.text = "Printing Strip response:\(paymentMethod.allResponseFields)\n\n"
+                
+                 }
+    
+    
+    
+   
+    
 
     @IBOutlet weak var phoneNumberLabel: UITextField!
     
@@ -25,6 +46,7 @@ class paymentViewController: UIViewController {
        hideKeyboardWhenTappedAround()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
           self.showAnimate()
+        
     }
     
 
@@ -90,4 +112,26 @@ class paymentViewController: UIViewController {
         print("remove animate")
     }
     
+    @IBAction func btnpay(_ sender: Any) {
+        
+        let addCardViewController = STPAddCardViewController()
+                addCardViewController.delegate = self
+                
+                // Present add card view controller
+                let navigationController = UINavigationController(rootViewController: addCardViewController)
+                present(navigationController, animated: true)
+            
+            
+            func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
+                // Dismiss add card view controller
+                dismiss(animated: true)
+            }
+           
+        
+        
+    }
+    
+    
+    
+  
 }

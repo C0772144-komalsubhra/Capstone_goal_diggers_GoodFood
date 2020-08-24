@@ -487,7 +487,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amF-kr-rM5">
                                         <rect key="frame" x="35" y="215" width="71" height="33"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="71" id="B45-Xj-CkH"/>
+                                            <constraint firstAttribute="width" constant="71" id="ZQc-KG-LZa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="Get Otp"/>
@@ -500,21 +500,26 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROY-A5-yoA">
-                                        <rect key="frame" x="131" y="290" width="54" height="33"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROY-A5-yoA">
+                                        <rect key="frame" x="131" y="351" width="54" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="cancel"/>
                                         <connections>
                                             <action selector="btnCancel:" destination="eZD-By-N3E" eventType="touchUpInside" id="ONK-ib-1Rz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGO-t1-hfR">
-                                        <rect key="frame" x="205" y="215" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="q28-yA-O1c"/>
-                                        </constraints>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od7-GM-smF">
+                                        <rect key="frame" x="143" y="286" width="30" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <state key="normal" title="submit"/>
+                                        <state key="normal" title="Pay"/>
+                                        <connections>
+                                            <action selector="btnpay:" destination="eZD-By-N3E" eventType="touchUpInside" id="wlq-Gd-Ccc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGO-t1-hfR">
+                                        <rect key="frame" x="190" y="217" width="69" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="submit otp"/>
                                         <connections>
                                             <action selector="btnOtp:" destination="eZD-By-N3E" eventType="touchUpInside" id="pdl-GW-ysE"/>
                                         </connections>
@@ -522,34 +527,35 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="5jK-4U-CQk" firstAttribute="trailing" secondItem="Gcd-lb-rtf" secondAttribute="trailing" id="8Yt-YI-XMs"/>
-                                    <constraint firstItem="tGO-t1-hfR" firstAttribute="leading" secondItem="amF-kr-rM5" secondAttribute="trailing" constant="99" id="PTa-Z4-T9A"/>
-                                    <constraint firstItem="ROY-A5-yoA" firstAttribute="centerX" secondItem="gm7-hr-YIi" secondAttribute="centerX" id="Xsm-Ho-isg"/>
-                                    <constraint firstItem="5jK-4U-CQk" firstAttribute="top" secondItem="gm7-hr-YIi" secondAttribute="top" constant="37" id="YPO-hV-CSF"/>
-                                    <constraint firstAttribute="bottom" secondItem="ROY-A5-yoA" secondAttribute="bottom" constant="77" id="YWU-2G-D7S"/>
-                                    <constraint firstItem="Gcd-lb-rtf" firstAttribute="top" secondItem="5jK-4U-CQk" secondAttribute="bottom" constant="37" id="ZK0-EW-Sdt"/>
-                                    <constraint firstItem="amF-kr-rM5" firstAttribute="leading" secondItem="gm7-hr-YIi" secondAttribute="leading" constant="35" id="dzO-Fy-01M"/>
-                                    <constraint firstItem="5jK-4U-CQk" firstAttribute="leading" secondItem="Gcd-lb-rtf" secondAttribute="leading" id="e0t-H4-THk"/>
-                                    <constraint firstItem="amF-kr-rM5" firstAttribute="top" secondItem="tGO-t1-hfR" secondAttribute="top" id="ers-JG-qyc"/>
-                                    <constraint firstAttribute="trailing" secondItem="tGO-t1-hfR" secondAttribute="trailing" constant="82" id="jnV-pH-ejt"/>
-                                    <constraint firstItem="Gcd-lb-rtf" firstAttribute="centerX" secondItem="ROY-A5-yoA" secondAttribute="centerX" id="lko-Wi-njB"/>
-                                    <constraint firstItem="amF-kr-rM5" firstAttribute="top" secondItem="Gcd-lb-rtf" secondAttribute="bottom" constant="73" id="mrk-F5-qmL"/>
-                                    <constraint firstItem="5jK-4U-CQk" firstAttribute="leading" secondItem="gm7-hr-YIi" secondAttribute="leading" constant="25" id="zD7-ze-w8R"/>
+                                    <constraint firstItem="5jK-4U-CQk" firstAttribute="trailing" secondItem="Gcd-lb-rtf" secondAttribute="trailing" id="0XE-iO-dhu"/>
+                                    <constraint firstAttribute="bottom" secondItem="ROY-A5-yoA" secondAttribute="bottom" constant="54" id="4eF-6v-0AR"/>
+                                    <constraint firstItem="5jK-4U-CQk" firstAttribute="leading" secondItem="Gcd-lb-rtf" secondAttribute="leading" id="EiU-8F-CBQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="od7-GM-smF" secondAttribute="trailing" constant="59" id="GX7-Lb-OTu"/>
+                                    <constraint firstItem="amF-kr-rM5" firstAttribute="leading" secondItem="gm7-hr-YIi" secondAttribute="leading" constant="35" id="UT8-fj-2YI"/>
+                                    <constraint firstItem="ROY-A5-yoA" firstAttribute="centerX" secondItem="gm7-hr-YIi" secondAttribute="centerX" id="d2e-RG-u98"/>
+                                    <constraint firstAttribute="centerX" secondItem="tGO-t1-hfR" secondAttribute="centerX" constant="-66" id="gBK-Dj-9d6"/>
+                                    <constraint firstItem="amF-kr-rM5" firstAttribute="baseline" secondItem="od7-GM-smF" secondAttribute="baseline" id="gTT-2B-N4K"/>
+                                    <constraint firstItem="Gcd-lb-rtf" firstAttribute="top" secondItem="5jK-4U-CQk" secondAttribute="bottom" constant="37" id="hzC-u4-5Xg"/>
+                                    <constraint firstItem="amF-kr-rM5" firstAttribute="top" secondItem="Gcd-lb-rtf" secondAttribute="bottom" constant="73" id="otw-dM-vGD"/>
+                                    <constraint firstItem="5jK-4U-CQk" firstAttribute="top" secondItem="gm7-hr-YIi" secondAttribute="top" constant="37" id="q1k-rw-FTB"/>
+                                    <constraint firstItem="5jK-4U-CQk" firstAttribute="leading" secondItem="gm7-hr-YIi" secondAttribute="leading" constant="25" id="qsI-sN-2pw"/>
+                                    <constraint firstItem="Gcd-lb-rtf" firstAttribute="centerX" secondItem="ROY-A5-yoA" secondAttribute="centerX" id="v7P-hY-JjS"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gm7-hr-YIi" firstAttribute="top" secondItem="U82-2w-db8" secondAttribute="top" constant="226" id="FNX-cf-V7h"/>
-                            <constraint firstItem="U82-2w-db8" firstAttribute="bottom" secondItem="gm7-hr-YIi" secondAttribute="bottom" constant="192" id="SCo-PD-RzC"/>
-                            <constraint firstItem="gm7-hr-YIi" firstAttribute="centerX" secondItem="oxe-8W-kCe" secondAttribute="centerX" id="av0-g2-b3h"/>
-                            <constraint firstItem="gm7-hr-YIi" firstAttribute="leading" secondItem="U82-2w-db8" secondAttribute="leading" constant="49" id="hcQ-fn-969"/>
+                            <constraint firstItem="U82-2w-db8" firstAttribute="bottom" secondItem="gm7-hr-YIi" secondAttribute="bottom" constant="192" id="0r1-aI-35f"/>
+                            <constraint firstItem="gm7-hr-YIi" firstAttribute="centerX" secondItem="oxe-8W-kCe" secondAttribute="centerX" id="2Zs-0E-GxC"/>
+                            <constraint firstItem="gm7-hr-YIi" firstAttribute="top" secondItem="U82-2w-db8" secondAttribute="top" constant="226" id="Pit-xr-NT5"/>
+                            <constraint firstItem="gm7-hr-YIi" firstAttribute="leading" secondItem="U82-2w-db8" secondAttribute="leading" constant="49" id="k3u-zA-iF5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U82-2w-db8"/>
                     </view>
                     <navigationItem key="navigationItem" id="cB1-Se-Dnd"/>
                     <connections>
                         <outlet property="otpLabel" destination="Gcd-lb-rtf" id="Qfv-Uf-rNM"/>
+                        <outlet property="paybtnoutlet" destination="od7-GM-smF" id="Icq-gt-Gms"/>
                         <outlet property="phoneNumberLabel" destination="5jK-4U-CQk" id="7Rh-k6-O3S"/>
                     </connections>
                 </viewController>
