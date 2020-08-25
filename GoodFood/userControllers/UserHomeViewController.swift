@@ -32,6 +32,7 @@ class UserHomeViewController: UIViewController {
       var isSideViewOpen : Bool = false
       var arrData = ["hello","logout"]
    // var menu: SideMenuNavigationController?
+    let darkcolor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
  
 
     
@@ -52,6 +53,7 @@ class UserHomeViewController: UIViewController {
         greetUser()
     
         populateTableView()
+         sidetableview.backgroundColor = darkcolor
         sidetableview.delegate = self
         sidetableview.dataSource = self
         sidetableview.reloadData()
@@ -300,6 +302,8 @@ extension UserHomeViewController : UITableViewDelegate, UITableViewDataSource
        
               let cell = tableView.dequeueReusableCell(withIdentifier: "sidecell") as? UITableViewCell
             cell?.textLabel?.text = self.arrData[indexPath.row]
+            cell?.textLabel?.textColor = UIColor.systemYellow
+            cell?.backgroundColor = darkcolor
             return cell!
         }else{
         let cell = tableView.dequeueReusableCell(withIdentifier: "resturantsNameCell") as! restaurantsNameTableViewcell
