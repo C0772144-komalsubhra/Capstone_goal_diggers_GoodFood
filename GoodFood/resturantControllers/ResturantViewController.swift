@@ -40,9 +40,33 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
         UNUserNotificationCenter.current().delegate = self
         
        // navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
+         populatecollectionView()
+         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        if( self.bookedTablesArray.count > 0)
+                                       {
+                                        let notificationContent = UNMutableNotificationContent()
+                                                                   notificationContent.title = "Table Booking "
+                                                                   
+                                                                        notificationContent.body = "New Table booking added please review"
+                                                                        notificationContent.badge = NSNumber(value: 1)
+                                                                        
+                                                                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3,
+                                                                                                                        repeats: false)
+                                                                        let request = UNNotificationRequest(identifier: "testNotification",
+                                                                                                            content: notificationContent,
+                                                                                                            trigger: trigger)
+                                                                        
+                                                                   self.userNotificationCenter.add(request) { (error) in
+                                                                            if let error = error {
+                                                                                print("Notification Error: ", error)
+                                                                            }
+                                                                        }
+                                                                   
+                                        
+                                        
+                                        }
         
-        
-        
+        }
         
     }
     
@@ -185,29 +209,7 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
                                          
                                      }
                                     
-                                   if( self.bookedTablesArray.count > 0)
-                                   {
-                                    let notificationContent = UNMutableNotificationContent()
-                                                               notificationContent.title = "Table Booking "
-                                                               
-                                                                    notificationContent.body = "New Table booking added please review"
-                                                                    notificationContent.badge = NSNumber(value: 1)
-                                                                    
-                                                                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3,
-                                                                                                                    repeats: false)
-                                                                    let request = UNNotificationRequest(identifier: "testNotification",
-                                                                                                        content: notificationContent,
-                                                                                                        trigger: trigger)
-                                                                    
-                                                               self.userNotificationCenter.add(request) { (error) in
-                                                                        if let error = error {
-                                                                            print("Notification Error: ", error)
-                                                                        }
-                                                                    }
-                                                               
-                                    
-                                    
-                                    }
+                               
                                  }
                                  
                                  
