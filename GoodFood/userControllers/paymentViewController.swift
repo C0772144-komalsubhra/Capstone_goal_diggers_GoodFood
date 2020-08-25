@@ -12,6 +12,9 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 import Stripe
+protocol getstatusdelegate{
+    func getstatus(data: String)
+}
 
 class paymentViewController: UIViewController, STPAddCardViewControllerDelegate {
     
@@ -21,12 +24,12 @@ class paymentViewController: UIViewController, STPAddCardViewControllerDelegate 
          dismiss(animated: true)
     }
     func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreatePaymentMethod paymentMethod: STPPaymentMethod, completion: @escaping STPErrorBlock) {
-                    self.dismiss(animated: true)
-
-                  // print("Printing Strip response:\( paymentMethod.alipay)\n\n")
-
-
-                       //   detailstext.text = "Printing Strip response:\(paymentMethod.allResponseFields)\n\n"
+     
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "place"), object: nil)
+    
+         self.dismiss(animated: true)
+                    self.removeAnimate()
+                  
                 
                  }
     
@@ -38,6 +41,7 @@ class paymentViewController: UIViewController, STPAddCardViewControllerDelegate 
     @IBOutlet weak var phoneNumberLabel: UITextField!
     
     @IBOutlet weak var otpLabel: UITextField!
+     var delegate: getstatusdelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +50,7 @@ class paymentViewController: UIViewController, STPAddCardViewControllerDelegate 
        hideKeyboardWhenTappedAround()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
           self.showAnimate()
-        
+     //paybtnoutlet.isHidden = true
     }
     
 
@@ -77,7 +81,7 @@ class paymentViewController: UIViewController, STPAddCardViewControllerDelegate 
                 let alertController = UIAlertController(title: nil, message: "successfull", preferredStyle: .alert)
                            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                            self.present(alertController, animated: true)
-                
+              //self.paybtnoutlet.isHidden = false
             }else{
                 print("Something went wrong")
             }

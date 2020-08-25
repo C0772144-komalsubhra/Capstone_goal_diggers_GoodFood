@@ -34,8 +34,38 @@ class CheckOutViewController: UIViewController{
         // Do any additional setup after loading the view.
         populateTableView()
          navigationItem.rightBarButtonItem = UIBarButtonItem(title: "clear cart", style: .plain, target: self, action: #selector(addTapped))
-   
+   NotificationCenter.default.addObserver(self, selector: #selector(disconnectPaxiSocket(_:)), name: Notification.Name(rawValue: "place"), object: nil)
         
+    }
+    
+    @objc func disconnectPaxiSocket(_ notification: Notification) {
+       print("Helooooooooooooooooooooooo")
+        let db = FirebaseFirestore.Firestore.firestore()
+              
+              let orderid = NSUUID().uuidString
+              
+              db.collection("restaurants").document(selectedRestaurant!.lowercased()).collection("foodorders").document(orderid).setData([
+                  "itemNames":self.cartItems,
+                  "quantites" : self.quantity,
+                  "total": String(self.total),
+                  "userid": self.currentUser,
+                  "orderid": orderid
+                 
+              ])
+              
+              db.collection("users").document(self.currentUser).collection("orders").document(orderid).setData([
+                         "itemNames":self.cartItems,
+                         "quantites" : self.quantity,
+                         "total": String(self.total),
+                         "orderid": self.currentUser,
+                          "userid": self.currentUser,
+                        
+                     ])
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+              let alertController = UIAlertController(title: nil, message: "Order Placed", preferredStyle: .alert)
+                                          alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                                          self.present(alertController, animated: true)
+        }
     }
     
 
@@ -106,44 +136,16 @@ class CheckOutViewController: UIViewController{
     
     @IBAction func btnPlaceOrder(_ sender: Any) {
         
-        let db = FirebaseFirestore.Firestore.firestore()
-        
-        let orderid = NSUUID().uuidString
-        
-        db.collection("restaurants").document(selectedRestaurant!.lowercased()).collection("foodorders").document(orderid).setData([
-            "itemNames":self.cartItems,
-            "quantites" : self.quantity,
-            "total": String(self.total),
-            "userid": self.currentUser,
-            "orderid": orderid
-           
-        ])
-        
-        db.collection("users").document(self.currentUser).collection("orders").document(orderid).setData([
-                   "itemNames":self.cartItems,
-                   "quantites" : self.quantity,
-                   "total": String(self.total),
-                   "orderid": self.currentUser,
-                    "userid": self.currentUser,
-                  
-               ])
-        
-        let alertController = UIAlertController(title: nil, message: "Order Placed", preferredStyle: .alert)
-                                    alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                                    self.present(alertController, animated: true)
-    }
-    
-        
-    
-    @IBAction func btnPopView(_ sender: Any) {
         let popupVc = (self.storyboard?.instantiateViewController(identifier: "showPopUpId"))! as paymentViewController
-        self.addChild(popupVc)
-        popupVc.view.frame = self.view.frame
-        self.view.addSubview(popupVc.view)
-        popupVc.didMove(toParent: self)
-        
+              self.addChild(popupVc)
+              popupVc.view.frame = self.view.frame
+              self.view.addSubview(popupVc.view)
+              popupVc.didMove(toParent: self)
       
     }
+    
+        
+
     
   
     
@@ -175,6 +177,20 @@ extension CheckOutViewController : UITableViewDelegate, UITableViewDataSource
           return cell
           
       }
+    
+    
+}
+extension CheckOutViewController: getstatusdelegate{
+
+    func getstatus(data: String) {
+        print("yes!!!")
+        print(data)
+        if( data == "success"){
+            
+            print("YESSSSS it worked")
+        }
+    }
+   
     
     
 }
