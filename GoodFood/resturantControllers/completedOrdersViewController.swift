@@ -17,6 +17,7 @@ class completedOrdersViewController: UIViewController {
     @IBOutlet weak var table: UITableView!
     var resturantName: String?
     var completedOrdersArray = [String]()
+    var totalcostArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class completedOrdersViewController: UIViewController {
                                    
                         
                                  self.completedOrdersArray.append(doc.documentID)
+                                self.totalcostArray.append(doc.get("total") as! String)
 
                                    
                                }
@@ -68,7 +70,14 @@ extension completedOrdersViewController : UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
+       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
 
+        let alertController = UIAlertController(title: nil, message: "total cost of order is : \(self.totalcostArray[indexPath.row])", preferredStyle: .alert)
+                                           alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                                           self.present(alertController, animated: true)
+        
+    }
 
 
 }
