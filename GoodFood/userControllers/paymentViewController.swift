@@ -50,7 +50,7 @@ class paymentViewController: UIViewController, STPAddCardViewControllerDelegate 
        hideKeyboardWhenTappedAround()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
           self.showAnimate()
-     //paybtnoutlet.isHidden = true
+     paybtnoutlet.isHidden = true
     }
     
 
@@ -81,7 +81,7 @@ class paymentViewController: UIViewController, STPAddCardViewControllerDelegate 
                 let alertController = UIAlertController(title: nil, message: "successfull", preferredStyle: .alert)
                            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                            self.present(alertController, animated: true)
-              //self.paybtnoutlet.isHidden = false
+             self.paybtnoutlet.isHidden = false
             }else{
                 print("Something went wrong")
             }
