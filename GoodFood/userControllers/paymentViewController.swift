@@ -21,56 +21,56 @@ class paymentViewController: UIViewController, STPAddCardViewControllerDelegate 
     @IBOutlet weak var paybtnoutlet: UIButton!
     
     func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
-         dismiss(animated: true)
+        dismiss(animated: true)
     }
     func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreatePaymentMethod paymentMethod: STPPaymentMethod, completion: @escaping STPErrorBlock) {
-     
+        
         NotificationCenter.default.post(name: Notification.Name(rawValue: "place"), object: nil)
+        
+        self.dismiss(animated: true)
+        self.removeAnimate()
+        
+        
+    }
     
-         self.dismiss(animated: true)
-                    self.removeAnimate()
-                  
-                
-                 }
     
     
     
-   
     
-
+    
     @IBOutlet weak var phoneNumberLabel: UITextField!
     
     @IBOutlet weak var otpLabel: UITextField!
-     var delegate: getstatusdelegate?
+    var delegate: getstatusdelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-       hideKeyboardWhenTappedAround()
+        hideKeyboardWhenTappedAround()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-          self.showAnimate()
-     paybtnoutlet.isHidden = true
+        self.showAnimate()
+      paybtnoutlet.isHidden = true
     }
     
-
+    
     @IBAction func btnSubmit(_ sender: Any) {
         guard let  phoneNumber = phoneNumberLabel.text else {return }
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
-          if let error = error {
-          print(error)
-            return
-          }
+            if let error = error {
+                print(error)
+                return
+            }
             
-          UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
         }
     }
     
     @IBAction func btnOtp(_ sender: Any) {
         
-         guard let  otpCode = otpLabel.text else {return }
+        guard let  otpCode = otpLabel.text else {return }
         
-      guard  let verificationID = UserDefaults.standard.string(forKey: "authVerificationID") else {return }
+        guard  let verificationID = UserDefaults.standard.string(forKey: "authVerificationID") else {return }
         
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: otpCode)
         
@@ -79,9 +79,9 @@ class paymentViewController: UIViewController, STPAddCardViewControllerDelegate 
             (success,error) in if error == nil{
                 
                 let alertController = UIAlertController(title: nil, message: "successfull", preferredStyle: .alert)
-                           alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                           self.present(alertController, animated: true)
-             self.paybtnoutlet.isHidden = false
+                alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alertController, animated: true)
+                self.paybtnoutlet.isHidden = false
             }else{
                 print("Something went wrong")
             }
@@ -98,17 +98,17 @@ class paymentViewController: UIViewController, STPAddCardViewControllerDelegate 
     }
     
     func removeAnimate()
-       {
-           UIView.animate(withDuration: 0.25, animations: {
-               self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-               self.view.alpha = 0.0;
-               }, completion:{(finished : Bool)  in
-                   if (finished)
-                   {
-                       self.view.removeFromSuperview()
-                   }
-           });
-       }
+    {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+            self.view.alpha = 0.0;
+        }, completion:{(finished : Bool)  in
+            if (finished)
+            {
+                self.view.removeFromSuperview()
+            }
+        });
+    }
     
     
     @IBAction func btnCancel(_ sender: Any) {
@@ -119,23 +119,23 @@ class paymentViewController: UIViewController, STPAddCardViewControllerDelegate 
     @IBAction func btnpay(_ sender: Any) {
         
         let addCardViewController = STPAddCardViewController()
-                addCardViewController.delegate = self
-                
-                // Present add card view controller
-                let navigationController = UINavigationController(rootViewController: addCardViewController)
-                present(navigationController, animated: true)
-            
-            
-            func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
-                // Dismiss add card view controller
-                dismiss(animated: true)
-            }
-           
+        addCardViewController.delegate = self
+        
+        // Present add card view controller
+        let navigationController = UINavigationController(rootViewController: addCardViewController)
+        present(navigationController, animated: true)
+        
+        
+        func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
+            // Dismiss add card view controller
+            dismiss(animated: true)
+        }
+        
         
         
     }
     
     
     
-  
+    
 }

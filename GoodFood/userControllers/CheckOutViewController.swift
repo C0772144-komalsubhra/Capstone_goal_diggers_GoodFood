@@ -63,7 +63,28 @@ class CheckOutViewController: UIViewController{
                      ])
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
               let alertController = UIAlertController(title: nil, message: "Order Placed", preferredStyle: .alert)
-                                          alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                                          alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler:  { action in
+
+                                            for item in self.cartItems
+                                               {
+                                               let itemref = Firestore.firestore().collection("users").document(self.currentUser).collection("cart").document(item)
+
+                                                           itemref.delete() { err in
+                                                         if let err = err {
+                                                             print("Error removing document: \(err)")
+                                                         } else {
+                                                             print("Document successfully removed!")
+                                                         }
+                                                           }
+                                                   
+                                               }
+                                            self.cartItems.removeAll()
+                                            self.costs.removeAll()
+                                            self.quantity.removeAll()
+                                               
+                                               self.cartTable.reloadData()
+                                               self.totalCost.text = ""
+                                          }))
                                           self.present(alertController, animated: true)
         }
     }
