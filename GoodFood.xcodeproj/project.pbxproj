@@ -33,6 +33,7 @@
 		7A6682B924E3B08500524224 /* completedOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6682B824E3B08500524224 /* completedOrdersViewController.swift */; };
 		7A6682BB24E5BB3B00524224 /* paymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6682BA24E5BB3B00524224 /* paymentViewController.swift */; };
 		7A6682BD24E60D4E00524224 /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6682BC24E60D4E00524224 /* mapViewController.swift */; };
+		CE00F3D524F7198B007DCC87 /* food.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE00F3D424F7198B007DCC87 /* food.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		7A6682BA24E5BB3B00524224 /* paymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentViewController.swift; sourceTree = "<group>"; };
 		7A6682BC24E60D4E00524224 /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
 		87B836131FED67110E3787E8 /* Pods-GoodFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodFood.debug.xcconfig"; path = "Target Support Files/Pods-GoodFood/Pods-GoodFood.debug.xcconfig"; sourceTree = "<group>"; };
+		CE00F3D424F7198B007DCC87 /* food.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = food.jpg; sourceTree = "<group>"; };
 		DDDCB6F673A03DC7BAD689AB /* Pods-GoodFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodFood.release.xcconfig"; path = "Target Support Files/Pods-GoodFood/Pods-GoodFood.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				7A66827F24DB186600524224 /* Assets.xcassets */,
 				7A66828124DB186600524224 /* LaunchScreen.storyboard */,
 				7A66828424DB186600524224 /* Info.plist */,
+				CE00F3D424F7198B007DCC87 /* food.jpg */,
 				7A66827C24DB186200524224 /* GoodFood.xcdatamodeld */,
 			);
 			path = GoodFood;
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A66828324DB186600524224 /* LaunchScreen.storyboard in Resources */,
+				CE00F3D524F7198B007DCC87 /* food.jpg in Resources */,
 				7A66828B24DB190E00524224 /* GoogleService-Info.plist in Resources */,
 				7A66828024DB186600524224 /* Assets.xcassets in Resources */,
 				7A66827B24DB186200524224 /* Main.storyboard in Resources */,
