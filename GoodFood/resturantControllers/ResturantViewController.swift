@@ -18,7 +18,7 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
     @IBOutlet weak var lblAvailableTables: UILabel!
     
     @IBOutlet weak var ordersSegment: UISegmentedControl!
-
+    
     @IBOutlet weak var ordersTable: UITableView!
     
     var resturantName: String?
@@ -36,57 +36,57 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        navigationController?.navigationBar.isHidden = true
+        //        navigationController?.navigationBar.isHidden = true
         UNUserNotificationCenter.current().delegate = self
         
-       // navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
-         populatecollectionView()
-         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-        if( self.bookedTablesArray.count > 0)
-                                       {
-                                        let notificationContent = UNMutableNotificationContent()
-                                                                   notificationContent.title = "Table Booking "
-                                                                   
-                                                                        notificationContent.body = "New Table booking added please review"
-                                                                        notificationContent.badge = NSNumber(value: 1)
-                                                                        
-                                                                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3,
-                                                                                                                        repeats: false)
-                                                                        let request = UNNotificationRequest(identifier: "testNotification",
-                                                                                                            content: notificationContent,
-                                                                                                            trigger: trigger)
-                                                                        
-                                                                   self.userNotificationCenter.add(request) { (error) in
-                                                                            if let error = error {
-                                                                                print("Notification Error: ", error)
-                                                                            }
-                                                                        }
-                                                                   
-                                        
-                                        
-                                        }
-        
+        // navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
+        populatecollectionView()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if( self.bookedTablesArray.count > 0)
+            {
+                let notificationContent = UNMutableNotificationContent()
+                notificationContent.title = "Table Booking "
+                
+                notificationContent.body = "New Table booking added please review"
+                notificationContent.badge = NSNumber(value: 1)
+                
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3,
+                                                                repeats: false)
+                let request = UNNotificationRequest(identifier: "testNotification",
+                                                    content: notificationContent,
+                                                    trigger: trigger)
+                
+                self.userNotificationCenter.add(request) { (error) in
+                    if let error = error {
+                        print("Notification Error: ", error)
+                    }
+                }
+                
+                
+                
+            }
+            
         }
         
     }
     
-   
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-//    @objc func logout(){
-//          do { try Auth.auth().signOut() }
-//        catch { print("already logged out") }
-//        navigationController?.popToRootViewController(animated: true)
-//    }
+    //    @objc func logout(){
+    //          do { try Auth.auth().signOut() }
+    //        catch { print("already logged out") }
+    //        navigationController?.popToRootViewController(animated: true)
+    //    }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-           navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         populatecollectionView()
         ordersTable.reloadData() 
     }
@@ -144,7 +144,7 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
                         }
                     }
                     
-                
+                    
                     self.ordersTable.reloadData()
                     
                 }
@@ -182,39 +182,39 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
                 }
                 
                 let db4 = Firestore.firestore().collection("restaurants").document((rn?.lowercased())!).collection("bookedtables")
-                    db4.getDocuments { (querySnapshot, error) in
-                                 if error != nil{
-                                     print(error!)
-                                     return
-                                 }
-                                 else{
-                                     
-                                     
-                                     if let snapshotDocuments = querySnapshot?.documents{
-                                            self.bookedTablesArray.removeAll()
-                                           self.bookedTablesSeats.removeAll()
-                                         self.customersName.removeAll()
-                                          self.status.removeAll()
-                                         for doc in snapshotDocuments{
-                                         
-                                            self.bookedTablesArray.append(doc.documentID)
-                                            self.bookedTablesSeats.append(doc.get("seats") as! String)
-                                            self.customersName.append(doc.get("name") as! String)
-                                            self.status.append(doc.get("status") as! String)
-                                            self.tableDate = doc.get("date") as! String
-                                             
-                                             
-                                             
-                                         }
-                                         
-                                     }
-                                    
-                               
-                                 }
-                                 
-                                 
-                                 
-                             }
+                db4.getDocuments { (querySnapshot, error) in
+                    if error != nil{
+                        print(error!)
+                        return
+                    }
+                    else{
+                        
+                        
+                        if let snapshotDocuments = querySnapshot?.documents{
+                            self.bookedTablesArray.removeAll()
+                            self.bookedTablesSeats.removeAll()
+                            self.customersName.removeAll()
+                            self.status.removeAll()
+                            for doc in snapshotDocuments{
+                                
+                                self.bookedTablesArray.append(doc.documentID)
+                                self.bookedTablesSeats.append(doc.get("seats") as! String)
+                                self.customersName.append(doc.get("name") as! String)
+                                self.status.append(doc.get("status") as! String)
+                                self.tableDate = doc.get("date") as! String
+                                
+                                
+                                
+                            }
+                            
+                        }
+                        
+                        
+                    }
+                    
+                    
+                    
+                }
                 
                 
                 
@@ -242,9 +242,9 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
         
         
         if let completedOrdersViewController = self.storyboard?.instantiateViewController(identifier: "completedordersVC") as? completedOrdersViewController{
-                  completedOrdersViewController.resturantName = self.resturantName
-                  self.navigationController?.pushViewController(completedOrdersViewController, animated: true)
-              }
+            completedOrdersViewController.resturantName = self.resturantName
+            self.navigationController?.pushViewController(completedOrdersViewController, animated: true)
+        }
         
     }
     
@@ -252,13 +252,13 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
     @IBAction func selectSegment(_ sender: Any) {
         
         switch ordersSegment.selectedSegmentIndex {
-                  case 0:
-                 print("first segment")
-                  case 1:
-                     print("second segment")
-                  default:
-                      break;
-                  }
+        case 0:
+            print("first segment")
+        case 1:
+            print("second segment")
+        default:
+            break;
+        }
         ordersTable.reloadData()
     }
     
@@ -288,26 +288,26 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
-               willPresent notification: UNNotification,
-               withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
-        {
-            completionHandler(.alert)
-        }
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler(.alert)
+    }
     
     
     @IBAction func btnlogout(_ sender: Any) {
-         do { try Auth.auth().signOut() }
-                catch { print("already logged out") }
-                navigationController?.popToRootViewController(animated: true)
+        do { try Auth.auth().signOut() }
+        catch { print("already logged out") }
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }
 extension ResturantViewController : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          if self.ordersSegment.selectedSegmentIndex == 0{
-        return self.ordersArray.count
-          }else{
+        if self.ordersSegment.selectedSegmentIndex == 0{
+            return self.ordersArray.count
+        }else{
             return self.customersName.count
         }
     }
@@ -316,45 +316,45 @@ extension ResturantViewController : UITableViewDelegate, UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "restOrderCell") as! restOrderViewCell
         if self.ordersSegment.selectedSegmentIndex == 0{
-              cell.label.text =  String(indexPath.row + 1)
+            cell.label.text =  String(indexPath.row + 1)
             cell.label.textColor = UIColor.systemYellow
-             cell.statusLabel.text = ""
-                 }else{
-                    cell.label.text =  self.customersName[indexPath.row]
-                        cell.label.textColor = UIColor.systemYellow
-                    cell.statusLabel.text = self.status[indexPath.row]
-                            if(status[indexPath.row] == "Not Confirmed"){
-                                       cell.statusLabel.textColor = UIColor.red
-                            }else{
-                                cell.statusLabel.textColor = UIColor.green
+            cell.statusLabel.text = ""
+        }else{
+            cell.label.text =  self.customersName[indexPath.row]
+            cell.label.textColor = UIColor.systemYellow
+            cell.statusLabel.text = self.status[indexPath.row]
+            if(status[indexPath.row] == "Not Confirmed"){
+                cell.statusLabel.textColor = UIColor.red
+            }else{
+                cell.statusLabel.textColor = UIColor.green
             }
-               }
-       
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           if self.ordersSegment.selectedSegmentIndex == 0{
-        if let orderDetailsViewController = self.storyboard?.instantiateViewController(identifier: "orderDetailsVC") as? orderDetailsViewController{
-            
-            orderDetailsViewController.orderID = self.orderID
-            orderDetailsViewController.selectedRestaurant = self.resturantName
-            self.navigationController?.pushViewController(orderDetailsViewController, animated: true)
-        }
+        if self.ordersSegment.selectedSegmentIndex == 0{
+            if let orderDetailsViewController = self.storyboard?.instantiateViewController(identifier: "orderDetailsVC") as? orderDetailsViewController{
+                
+                orderDetailsViewController.orderID = self.orderID
+                orderDetailsViewController.selectedRestaurant = self.resturantName
+                self.navigationController?.pushViewController(orderDetailsViewController, animated: true)
+            }
         }else{
-           
+            
             let alertController = UIAlertController(title: nil, message: "\(self.bookedTablesSeats[indexPath.row]) seats booked \n \(self.tableDate)", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "confirm", style: .default, handler: { action in                let db = Firestore.firestore().collection("restaurants").document((self.resname.lowercased())).collection("bookedtables").document(self.bookedTablesArray[indexPath.row])
-               
+                
                 db.updateData(["status" : "Confirmed"])
                 Firestore.firestore().collection("users").document(self.bookedTablesArray[indexPath.row]).collection("bookedtables").document(self.resname.lowercased()).updateData(["status" : "Confirmed"])
                 self.populatecollectionView()
                 self.ordersTable.reloadData()
                 
-            
-             }))
+                
+            }))
             alertController.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
-              self.present(alertController, animated: true)
+            self.present(alertController, animated: true)
         }
     }
     
