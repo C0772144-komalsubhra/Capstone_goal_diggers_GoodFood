@@ -19,6 +19,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var switchRememberme: UISwitch!
     
+    
+    @IBOutlet weak var signUpBtn: UIBarButtonItem!
+    
     @IBOutlet weak var logBtnLbl: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,7 @@ class LoginViewController: UIViewController {
         
 //        Utilities.styleFilledButton(logBtnLbl)
         Utilities.styleHollowButton(logBtnLbl)
+        
         let ud = UserDefaults.standard
                let e = ud.string(forKey: "email")
                let p = ud.string(forKey: "password")
