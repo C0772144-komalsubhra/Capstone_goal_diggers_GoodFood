@@ -89,8 +89,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
     @IBAction func btnUser(_ sender: Any) {
         
         clicked = true
-        btnUser.layer.borderColor = UIColor.red.cgColor
-        btnResturant.layer.borderColor = UIColor.black.cgColor
+        btnUser.layer.borderColor = UIColor.brown.cgColor
+        btnResturant.layer.borderColor = UIColor.yellow.cgColor
         txtFirstName.isHidden = false
         txtLastName.isHidden = false
         txtEmail.isHidden = false
@@ -101,8 +101,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
     
     @IBAction func btnResturant(_ sender: Any) {
         clicked = false
-        btnUser.layer.borderColor = UIColor.black.cgColor
-        btnResturant.layer.borderColor = UIColor.red.cgColor
+        btnUser.layer.borderColor = UIColor.yellow.cgColor
+        btnResturant.layer.borderColor = UIColor.brown.cgColor
         txtFirstName.isHidden = true
         txtLastName.isHidden = true
         txtEmail.isHidden = false
