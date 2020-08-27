@@ -27,12 +27,18 @@ class CheckOutViewController: UIViewController{
     var quantity = [Int]()
     var total: Int = 0
       let currentUser = (Auth.auth().currentUser?.uid)!
+    
+    
+    @IBOutlet weak var placeOdrBtnLbl: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         populateTableView()
+        
+        Utilities.styleFilledButton(placeOdrBtnLbl)
          navigationItem.rightBarButtonItem = UIBarButtonItem(title: "clear cart", style: .plain, target: self, action: #selector(addTapped))
    NotificationCenter.default.addObserver(self, selector: #selector(disconnectPaxiSocket(_:)), name: Notification.Name(rawValue: "place"), object: nil)
         
