@@ -32,16 +32,29 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
     
     @IBOutlet weak var userimage: UIImageView!
     
+    @IBOutlet weak var signUpBtnLbl: UIButton!
     
     var clicked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        Utilities.styleHollowButton(btnUser)
+        Utilities.styleHollowButton(btnResturant)
+        Utilities.styleTextField(txtFirstName)
+        Utilities.styleTextField(txtLastName)
+        Utilities.styleTextField(txtPassword)
+        Utilities.styleTextField(txtEmail)
+        Utilities.styleTextField(txtAddress)
+        Utilities.styleTextField(txtResturantName)
+        Utilities.styleFilledButton(signUpBtnLbl)
+        
+        
         userimage.isUserInteractionEnabled = true
                userimage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectimage)))
-        hideFields()
-        buttoncolors()
+//        hideFields()
+//        buttoncolors()
         
     }
     
