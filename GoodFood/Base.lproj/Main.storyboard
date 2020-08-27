@@ -1015,54 +1015,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lc8-0s-73v">
-                                <rect key="frame" x="77" y="161" width="261" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lc8-0s-73v">
+                                <rect key="frame" x="50" y="94" width="314" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Y9b-BZ-wgz"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="elm-hg-Tcl">
-                                <rect key="frame" x="77" y="243" width="261" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="elm-hg-Tcl">
+                                <rect key="frame" x="50" y="154" width="314" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nFl-Rd-KHQ"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jd0-gt-NdA">
-                                <rect key="frame" x="77" y="305" width="261" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SXE-a8-dku">
-                                <rect key="frame" x="77" y="473" width="261" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SXE-a8-dku">
+                                <rect key="frame" x="50" y="214" width="314" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Iw1-mS-abs"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ETx-ta-fup">
-                                <rect key="frame" x="77" y="533" width="261" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ETx-ta-fup">
+                                <rect key="frame" x="50" y="494.5" width="314" height="198"/>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="a0t-ww-n09"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9p-Qa-d9L">
-                                <rect key="frame" x="182" y="710" width="54" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9p-Qa-d9L">
+                                <rect key="frame" x="50" y="772" width="314" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RtH-0b-JqW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="btnAddItem:" destination="5jS-dD-IYl" eventType="touchUpInside" id="d5z-1M-Pjp"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jd0-gt-NdA">
+                                <rect key="frame" x="50" y="274" width="314" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="hu5-Zc-vC5"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="elm-hg-Tcl" firstAttribute="top" secondItem="lc8-0s-73v" secondAttribute="bottom" constant="20" id="0ZM-ZB-LAT"/>
+                            <constraint firstItem="lc8-0s-73v" firstAttribute="leading" secondItem="sGx-1J-YE8" secondAttribute="leading" constant="50" id="1qY-89-YM8"/>
+                            <constraint firstItem="sGx-1J-YE8" firstAttribute="bottom" secondItem="k9p-Qa-d9L" secondAttribute="bottom" constant="50" id="5Pv-Kw-2Ys"/>
+                            <constraint firstItem="elm-hg-Tcl" firstAttribute="leading" secondItem="sGx-1J-YE8" secondAttribute="leading" constant="50" id="7KS-vC-JIe"/>
+                            <constraint firstItem="sGx-1J-YE8" firstAttribute="trailing" secondItem="elm-hg-Tcl" secondAttribute="trailing" constant="50" id="87Q-58-Gxr"/>
+                            <constraint firstItem="lc8-0s-73v" firstAttribute="top" secondItem="sGx-1J-YE8" secondAttribute="top" constant="50" id="9Hf-cf-HoP"/>
+                            <constraint firstItem="ETx-ta-fup" firstAttribute="leading" secondItem="sGx-1J-YE8" secondAttribute="leading" constant="50" id="EqT-yW-XrL"/>
+                            <constraint firstItem="Jd0-gt-NdA" firstAttribute="leading" secondItem="sGx-1J-YE8" secondAttribute="leading" constant="50" id="G7Q-eV-RXE"/>
+                            <constraint firstItem="Jd0-gt-NdA" firstAttribute="top" secondItem="SXE-a8-dku" secondAttribute="bottom" constant="20" id="RV0-1p-ZdE"/>
+                            <constraint firstItem="sGx-1J-YE8" firstAttribute="trailing" secondItem="k9p-Qa-d9L" secondAttribute="trailing" constant="50" id="T0H-lE-4An"/>
+                            <constraint firstItem="SXE-a8-dku" firstAttribute="top" secondItem="elm-hg-Tcl" secondAttribute="bottom" constant="20" id="Y3A-Rt-1IB"/>
+                            <constraint firstItem="k9p-Qa-d9L" firstAttribute="leading" secondItem="sGx-1J-YE8" secondAttribute="leading" constant="50" id="Zbs-ha-2Sf"/>
+                            <constraint firstItem="sGx-1J-YE8" firstAttribute="trailing" secondItem="ETx-ta-fup" secondAttribute="trailing" constant="50" id="cCF-Zv-TUU"/>
+                            <constraint firstItem="sGx-1J-YE8" firstAttribute="trailing" secondItem="Jd0-gt-NdA" secondAttribute="trailing" constant="50" id="lCm-L9-dQx"/>
+                            <constraint firstItem="sGx-1J-YE8" firstAttribute="trailing" secondItem="lc8-0s-73v" secondAttribute="trailing" constant="50" id="mjy-FB-JRj"/>
+                            <constraint firstItem="ETx-ta-fup" firstAttribute="top" secondItem="Jd0-gt-NdA" secondAttribute="bottom" constant="20" id="oSu-gg-vIU"/>
+                            <constraint firstItem="sGx-1J-YE8" firstAttribute="trailing" secondItem="SXE-a8-dku" secondAttribute="trailing" constant="50" id="oiv-oe-hJ3"/>
+                            <constraint firstItem="SXE-a8-dku" firstAttribute="leading" secondItem="sGx-1J-YE8" secondAttribute="leading" constant="50" id="vT5-Os-v7x"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sGx-1J-YE8"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZFS-PG-gQK"/>
                     <connections>
+                        <outlet property="addBtnLbl" destination="k9p-Qa-d9L" id="kUx-dd-byi"/>
                         <outlet property="imgitem" destination="ETx-ta-fup" id="UrN-2y-UsC"/>
                         <outlet property="txtCategory" destination="elm-hg-Tcl" id="aGF-R8-B3Z"/>
                         <outlet property="txtCost" destination="SXE-a8-dku" id="hM4-EC-gxY"/>

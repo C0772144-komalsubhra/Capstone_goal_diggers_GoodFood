@@ -26,10 +26,22 @@ class AddItemViewController: UIViewController,UIImagePickerControllerDelegate, U
     
     var resturantName: String?
     
+    
+    @IBOutlet weak var addBtnLbl: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        
+//        Utilities.styleTextField(txtitemName)
+//        Utilities.styleTextField(txtCategory)
+//        Utilities.styleTextField(txtCost)
+        
+        
+        Utilities.styleFilledButton(addBtnLbl)
+        
         imgitem.isUserInteractionEnabled = true
         imgitem.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectimage)))
      
