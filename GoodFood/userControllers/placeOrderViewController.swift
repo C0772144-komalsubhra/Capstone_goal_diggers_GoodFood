@@ -21,12 +21,20 @@ class placeOrderViewController: UIViewController {
     var selectedRestaurant : String?
     var imgitemArray = [Any]()
       var itemsdict = [String:Any]()
+    
+    @IBOutlet weak var cartBtnLbl: UIButton!
+    
+    
+    @IBOutlet weak var bookTblBtnLbl: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         populatecollectionView()
        // print(selectedRestaurant)
         setbadgecount()
+        
+        Utilities.styleFilledButton(cartBtnLbl)
+        Utilities.styleFilledButton(bookTblBtnLbl)
       
     }
     
