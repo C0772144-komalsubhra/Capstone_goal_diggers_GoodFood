@@ -339,56 +339,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available Tables:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m86-eX-beG">
-                                <rect key="frame" x="20" y="113" width="156" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Tables:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m86-eX-beG">
+                                <rect key="frame" x="50" y="114" width="151" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fr-EM-SUP">
-                                <rect key="frame" x="248" y="132" width="50" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fr-EM-SUP">
+                                <rect key="frame" x="214" y="114" width="50" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter no of tables :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6a-tU-MFv">
-                                <rect key="frame" x="43" y="206" width="291" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter no of tables :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6a-tU-MFv">
+                                <rect key="frame" x="50" y="180" width="314" height="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHg-Wl-Yrg">
-                                <rect key="frame" x="144" y="609" width="137" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHg-Wl-Yrg">
+                                <rect key="frame" x="50" y="752" width="314" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="e94-ms-bFs"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <state key="normal" title="Book Table">
-                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Book Table"/>
                                 <connections>
                                     <action selector="btnBookTable:" destination="hNe-in-Fpc" eventType="touchUpInside" id="pZb-yg-1mw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guf-ZP-2tc">
-                                <rect key="frame" x="43" y="300" width="291" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guf-ZP-2tc">
+                                <rect key="frame" x="50" y="254" width="314" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="m7c-33-vN2">
-                                <rect key="frame" x="5" y="365" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="m7c-33-vN2">
+                                <rect key="frame" x="50" y="315" width="314" height="216"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="dateChanged:" destination="hNe-in-Fpc" eventType="valueChanged" id="WCg-GN-sHq"/>
                                 </connections>
                             </datePicker>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m7c-33-vN2" firstAttribute="leading" secondItem="f3z-pT-tv2" secondAttribute="leading" constant="50" id="5Sa-Or-nRG"/>
+                            <constraint firstItem="guf-ZP-2tc" firstAttribute="leading" secondItem="f3z-pT-tv2" secondAttribute="leading" constant="50" id="6U1-rl-51j"/>
+                            <constraint firstItem="O6a-tU-MFv" firstAttribute="leading" secondItem="f3z-pT-tv2" secondAttribute="leading" constant="50" id="8EF-5p-IR1"/>
+                            <constraint firstAttribute="trailing" secondItem="m7c-33-vN2" secondAttribute="trailing" constant="50" id="Bb8-Nz-QzK"/>
+                            <constraint firstItem="m86-eX-beG" firstAttribute="leading" secondItem="f3z-pT-tv2" secondAttribute="leading" constant="50" id="J0l-Ah-ZuK"/>
+                            <constraint firstItem="f3z-pT-tv2" firstAttribute="trailing" secondItem="ZHg-Wl-Yrg" secondAttribute="trailing" constant="50" id="J6T-nz-IMJ"/>
+                            <constraint firstItem="m86-eX-beG" firstAttribute="top" secondItem="f3z-pT-tv2" secondAttribute="top" constant="70" id="O0P-Qv-aLy"/>
+                            <constraint firstItem="0fr-EM-SUP" firstAttribute="top" secondItem="f3z-pT-tv2" secondAttribute="top" constant="70" id="Zh0-dv-qiR"/>
+                            <constraint firstItem="f3z-pT-tv2" firstAttribute="trailing" secondItem="guf-ZP-2tc" secondAttribute="trailing" constant="50" id="ck6-Xx-qYg"/>
+                            <constraint firstItem="f3z-pT-tv2" firstAttribute="trailing" secondItem="0fr-EM-SUP" secondAttribute="trailing" constant="150" id="eQs-h5-oyE"/>
+                            <constraint firstItem="f3z-pT-tv2" firstAttribute="bottom" secondItem="ZHg-Wl-Yrg" secondAttribute="bottom" constant="50" id="gCD-rB-hOG"/>
+                            <constraint firstItem="ZHg-Wl-Yrg" firstAttribute="leading" secondItem="f3z-pT-tv2" secondAttribute="leading" constant="50" id="i6l-ej-88D"/>
+                            <constraint firstItem="guf-ZP-2tc" firstAttribute="top" secondItem="O6a-tU-MFv" secondAttribute="bottom" constant="40" id="rzi-vD-l0R"/>
+                            <constraint firstItem="O6a-tU-MFv" firstAttribute="top" secondItem="0fr-EM-SUP" secondAttribute="bottom" constant="40" id="tPu-4b-sec"/>
+                            <constraint firstItem="m7c-33-vN2" firstAttribute="top" secondItem="guf-ZP-2tc" secondAttribute="bottom" constant="40" id="uv5-4w-lTp"/>
+                            <constraint firstItem="f3z-pT-tv2" firstAttribute="trailing" secondItem="O6a-tU-MFv" secondAttribute="trailing" constant="50" id="wg0-9O-cRg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="f3z-pT-tv2"/>
                     </view>
                     <connections>
+                        <outlet property="bookTblBtnLbl" destination="ZHg-Wl-Yrg" id="hT1-GQ-FWa"/>
                         <outlet property="dateLabel" destination="guf-ZP-2tc" id="quD-JI-Qus"/>
                         <outlet property="datePicker" destination="m7c-33-vN2" id="Mai-0p-l1a"/>
                         <outlet property="lblAvailableTables" destination="0fr-EM-SUP" id="ht8-yY-rqU"/>

@@ -24,10 +24,16 @@ class bookTableViewController: UIViewController {
     @IBOutlet weak var txtNoOfTables: UITextField!
     @IBOutlet weak var lblAvailableTables: UILabel!
     
+    
+    @IBOutlet weak var bookTblBtnLbl: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        Utilities.styleTextField(txtNoOfTables)
+        Utilities.styleFilledButton(bookTblBtnLbl)
         populatedata()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Route", style: .plain, target: self, action: #selector(addTapped))
     }
