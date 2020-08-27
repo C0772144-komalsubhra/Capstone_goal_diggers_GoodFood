@@ -22,11 +22,17 @@ class DetailedItemViewController: UIViewController {
     var selectedItem: String?
     var selectedRestaurant : String?
     var itemDict: [String : Any] = [:]
+    
+    @IBOutlet weak var addCartBtnLbl: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         getItems()
+        
+        Utilities.styleFilledButton(addCartBtnLbl)
     }
     
      func getItems(){

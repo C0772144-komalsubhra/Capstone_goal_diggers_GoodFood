@@ -229,72 +229,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSs-NC-1Xg">
-                                <rect key="frame" x="145" y="661" width="129" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Add to Cart">
-                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="addToCart:" destination="R3f-n0-bdc" eventType="touchUpInside" id="qnP-ES-LD0"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7r8-aW-sNg">
-                                <rect key="frame" x="56" y="186" width="316" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7r8-aW-sNg">
+                                <rect key="frame" x="50" y="144" width="314" height="49"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="41"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPE-3d-vzW">
-                                <rect key="frame" x="131" y="553" width="153" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPE-3d-vzW">
+                                <rect key="frame" x="50" y="588.5" width="314" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="IcY-lI-qR1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jqP-GE-SQ8">
-                                <rect key="frame" x="94" y="274" width="241" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqP-GE-SQ8">
+                                <rect key="frame" x="50" y="223" width="314" height="150"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="2OO-Dv-eOm"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR1-NO-tyL">
-                                <rect key="frame" x="202" y="496" width="11" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7Z-WH-cUm">
-                                <rect key="frame" x="92" y="491" width="51" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="remove">
-                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="gnd-Hk-6Zd">
+                                <rect key="frame" x="50" y="523" width="314" height="25.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7Z-WH-cUm">
+                                        <rect key="frame" x="0.0" y="0.0" width="38" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="titleShadowOffset" width="5" height="5"/>
+                                        <state key="normal" image="minus.circle.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnremove:" destination="R3f-n0-bdc" eventType="touchUpInside" id="xaI-vt-fko"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR1-NO-tyL">
+                                        <rect key="frame" x="138" y="0.0" width="38" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX6-6M-psJ">
+                                        <rect key="frame" x="276" y="0.0" width="38" height="25.5"/>
+                                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="plus.circle.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnadd:" destination="R3f-n0-bdc" eventType="touchUpInside" id="psb-ef-UEL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSs-NC-1Xg">
+                                <rect key="frame" x="50" y="718" width="314" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Add to Cart"/>
                                 <connections>
-                                    <action selector="btnremove:" destination="R3f-n0-bdc" eventType="touchUpInside" id="xaI-vt-fko"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX6-6M-psJ">
-                                <rect key="frame" x="305" y="491" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="add">
-                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnadd:" destination="R3f-n0-bdc" eventType="touchUpInside" id="psb-ef-UEL"/>
+                                    <action selector="addToCart:" destination="R3f-n0-bdc" eventType="touchUpInside" id="qnP-ES-LD0"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gnd-Hk-6Zd" firstAttribute="leading" secondItem="6RM-Qm-O7h" secondAttribute="leading" constant="50" id="6Ho-8M-sWU"/>
+                            <constraint firstItem="6RM-Qm-O7h" firstAttribute="trailing" secondItem="SSs-NC-1Xg" secondAttribute="trailing" constant="50" id="7Dr-fQ-eap"/>
+                            <constraint firstItem="6RM-Qm-O7h" firstAttribute="trailing" secondItem="7r8-aW-sNg" secondAttribute="trailing" constant="50" id="Dyc-Kf-LOb"/>
+                            <constraint firstItem="gnd-Hk-6Zd" firstAttribute="top" secondItem="jqP-GE-SQ8" secondAttribute="bottom" constant="150" id="Myn-mB-EEe"/>
+                            <constraint firstItem="6RM-Qm-O7h" firstAttribute="bottom" secondItem="SSs-NC-1Xg" secondAttribute="bottom" constant="100" id="Qoo-pP-TbT"/>
+                            <constraint firstItem="HPE-3d-vzW" firstAttribute="leading" secondItem="6RM-Qm-O7h" secondAttribute="leading" constant="50" id="awf-gn-EeI"/>
+                            <constraint firstItem="jqP-GE-SQ8" firstAttribute="top" secondItem="7r8-aW-sNg" secondAttribute="bottom" constant="30" id="boZ-Un-JgO"/>
+                            <constraint firstItem="jqP-GE-SQ8" firstAttribute="leading" secondItem="6RM-Qm-O7h" secondAttribute="leading" constant="50" id="fQg-TU-w23"/>
+                            <constraint firstItem="7r8-aW-sNg" firstAttribute="top" secondItem="6RM-Qm-O7h" secondAttribute="top" constant="100" id="gAL-0t-Cji"/>
+                            <constraint firstItem="6RM-Qm-O7h" firstAttribute="trailing" secondItem="gnd-Hk-6Zd" secondAttribute="trailing" constant="50" id="hWU-op-hZz"/>
+                            <constraint firstItem="HPE-3d-vzW" firstAttribute="top" secondItem="gnd-Hk-6Zd" secondAttribute="bottom" constant="40" id="nJV-I4-6nH"/>
+                            <constraint firstItem="SSs-NC-1Xg" firstAttribute="leading" secondItem="6RM-Qm-O7h" secondAttribute="leading" constant="50" id="s3W-PE-XTe"/>
+                            <constraint firstItem="6RM-Qm-O7h" firstAttribute="trailing" secondItem="HPE-3d-vzW" secondAttribute="trailing" constant="50" id="sn0-O9-izO"/>
+                            <constraint firstItem="7r8-aW-sNg" firstAttribute="leading" secondItem="6RM-Qm-O7h" secondAttribute="leading" constant="50" id="uJ4-4C-LlX"/>
+                            <constraint firstItem="6RM-Qm-O7h" firstAttribute="trailing" secondItem="jqP-GE-SQ8" secondAttribute="trailing" constant="50" id="wVe-PR-3Z2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6RM-Qm-O7h"/>
                     </view>
                     <connections>
+                        <outlet property="addCartBtnLbl" destination="SSs-NC-1Xg" id="aVn-uf-u5s"/>
                         <outlet property="itemCost" destination="HPE-3d-vzW" id="32e-nS-Dqt"/>
                         <outlet property="itemDetails" destination="jqP-GE-SQ8" id="R4q-FH-U3v"/>
                         <outlet property="itemName" destination="7r8-aW-sNg" id="ITr-Qu-or7"/>
@@ -303,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0Z-rE-4Vn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="1599"/>
+            <point key="canvasLocation" x="211.59420289855075" y="1598.4375"/>
         </scene>
         <!--Book Table View Controller-->
         <scene sceneID="l3o-Tx-EE6">
@@ -1232,6 +1258,8 @@
     <resources>
         <image name="Image" width="760" height="670"/>
         <image name="camera" catalog="system" width="64" height="48"/>
+        <image name="minus.circle.fill" catalog="system" width="64" height="60"/>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
+        <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>
