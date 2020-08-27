@@ -36,6 +36,9 @@ class mapViewController: UIViewController,MKMapViewDelegate, UISearchBarDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        Utilities.styleFilledButton(btnDone)
+        
    
         if(fromVC != "BookTable"){
              btnDone.setTitle("Done", for: .normal)
