@@ -273,7 +273,7 @@ class ResturantViewController: UIViewController, UNUserNotificationCenterDelegat
             // do something interesting with "answer" here
             let db = FirebaseFirestore.Firestore.firestore()
             
-            db.collection("restaurants").document(self.resturantName!).collection("AvailableTables").document("TotalTables").setData([
+            db.collection("restaurants").document(self.resturantName!.lowercased()).collection("AvailableTables").document("TotalTables").setData([
                 "availabletables":  answer.text as Any
             ])
         }

@@ -194,7 +194,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & 
                         let address = self.txtAddress.text!
                       
                       let db = FirebaseFirestore.Firestore.firestore()
-                        db.collection("restaurants").document(ResturantName.lowercased()).setData(["restaurantname":ResturantName,
+                        db.collection("restaurants").document(ResturantName.lowercased()).setData(["restaurantname":ResturantName.lowercased(),
                                                                 "address":address,
                                                                 "ruid": authResult!.user.uid,
                                                                 "url": url
