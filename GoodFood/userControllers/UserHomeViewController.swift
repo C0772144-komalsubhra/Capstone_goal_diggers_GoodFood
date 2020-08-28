@@ -30,7 +30,7 @@ class UserHomeViewController: UIViewController {
     var status = [String]()
     var imagesArray = [Any]()
       var isSideViewOpen : Bool = false
-      var arrData = ["hello","logout"]
+      var arrData = ["logout"]
    // var menu: SideMenuNavigationController?
     let darkcolor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
  
@@ -48,7 +48,8 @@ class UserHomeViewController: UIViewController {
         sideview.isHidden = true
            isSideViewOpen = false
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(presentmenu))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "LogOut", style: .plain, target: self, action: #selector(presentmenu))
+//        navigationItem.leftBarButtonItem?.largeContentSizeImage = UIImage(contentsOfFile: "gf")
         
         greetUser()
     

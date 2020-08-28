@@ -6,6 +6,10 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>food.jpg</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -23,7 +27,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.367631172275-barhh3phaq488pdcl14hfg2n8sc0i2j4</string>
+				<string>com.googleusercontent.apps.983941472581-o163s5ed5eq4rgbm4asc0nu4vbhbpr6e</string>
 			</array>
 		</dict>
 	</array>
@@ -63,10 +67,6 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>CFBundleIconFiles</key>
-	<array>
-		<string>food.jpg</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

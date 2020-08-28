@@ -15,7 +15,6 @@
 		7A66827E24DB186200524224 /* GoodFood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A66827C24DB186200524224 /* GoodFood.xcdatamodeld */; };
 		7A66828024DB186600524224 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A66827F24DB186600524224 /* Assets.xcassets */; };
 		7A66828324DB186600524224 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A66828124DB186600524224 /* LaunchScreen.storyboard */; };
-		7A66828B24DB190E00524224 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A66828A24DB190E00524224 /* GoogleService-Info.plist */; };
 		7A66828D24DB1EBC00524224 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A66828C24DB1EBC00524224 /* SignUpViewController.swift */; };
 		7A66828F24DB215C00524224 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A66828E24DB215C00524224 /* Utilites.swift */; };
 		7A66829324DB2C9400524224 /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A66829224DB2C9400524224 /* UserHomeViewController.swift */; };
@@ -34,6 +33,7 @@
 		7A6682BB24E5BB3B00524224 /* paymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6682BA24E5BB3B00524224 /* paymentViewController.swift */; };
 		7A6682BD24E60D4E00524224 /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6682BC24E60D4E00524224 /* mapViewController.swift */; };
 		CE00F3D524F7198B007DCC87 /* food.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE00F3D424F7198B007DCC87 /* food.jpg */; };
+		CE73C9C124F86E69002B6862 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE73C9C024F86E69002B6862 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +47,6 @@
 		7A66827F24DB186600524224 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A66828224DB186600524224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A66828424DB186600524224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A66828A24DB190E00524224 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		7A66828C24DB1EBC00524224 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7A66828E24DB215C00524224 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		7A66829224DB2C9400524224 /* UserHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		7A6682BC24E60D4E00524224 /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
 		87B836131FED67110E3787E8 /* Pods-GoodFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodFood.debug.xcconfig"; path = "Target Support Files/Pods-GoodFood/Pods-GoodFood.debug.xcconfig"; sourceTree = "<group>"; };
 		CE00F3D424F7198B007DCC87 /* food.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = food.jpg; sourceTree = "<group>"; };
+		CE73C9C024F86E69002B6862 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDDCB6F673A03DC7BAD689AB /* Pods-GoodFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodFood.release.xcconfig"; path = "Target Support Files/Pods-GoodFood/Pods-GoodFood.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,9 +118,9 @@
 				7A66829124DB2C5C00524224 /* Helper methods */,
 				7A66829024DB2C4400524224 /* controllers */,
 				7A66827324DB186200524224 /* AppDelegate.swift */,
+				CE73C9C024F86E69002B6862 /* GoogleService-Info.plist */,
 				7A66827524DB186200524224 /* SceneDelegate.swift */,
 				7A66827924DB186200524224 /* Main.storyboard */,
-				7A66828A24DB190E00524224 /* GoogleService-Info.plist */,
 				7A66827F24DB186600524224 /* Assets.xcassets */,
 				7A66828124DB186600524224 /* LaunchScreen.storyboard */,
 				7A66828424DB186600524224 /* Info.plist */,
@@ -253,7 +253,7 @@
 			files = (
 				7A66828324DB186600524224 /* LaunchScreen.storyboard in Resources */,
 				CE00F3D524F7198B007DCC87 /* food.jpg in Resources */,
-				7A66828B24DB190E00524224 /* GoogleService-Info.plist in Resources */,
+				CE73C9C124F86E69002B6862 /* GoogleService-Info.plist in Resources */,
 				7A66828024DB186600524224 /* Assets.xcassets in Resources */,
 				7A66827B24DB186200524224 /* Main.storyboard in Resources */,
 			);
